@@ -30,7 +30,7 @@
       "name": "Lassi & Cocktails",
       "slug": "lassi-cocktails",
       "tagline": "Tradition, reimagined in every glass",
-      "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&auto=format&q=80",
+      "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&auto=format&q=80",
       "items": [
         { "name": "Mango Lassi", "price": 70 },
         { "name": "Vanilla Lassi", "price": 70 },
@@ -46,7 +46,7 @@
       "name": "Tender Coconut",
       "slug": "tender-coconut",
       "tagline": "Nature's nectar, our way",
-      "image": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=800&auto=format&q=80",
+      "image": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=800&auto=format&q=80",
       "items": [
         { "name": "Special", "price": 130 },
         { "name": "Strawberry", "price": 120 },

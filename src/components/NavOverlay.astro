@@ -1,60 +1,51 @@
 ---
 const navLinks = [
-  { label: 'Home', href: '#hero', image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=600&q=80' },
-  { label: 'About', href: '#about', image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80' },
-  { label: 'Menu', href: '#menu', image: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80' },
-  { label: 'Gallery', href: '#gallery', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80' },
-  { label: 'Celebrations', href: '#celebrations', image: 'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&q=80' },
-  { label: 'Visit', href: '#visit', image: 'https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=600&q=80' },
+  { label: 'Home', href: '#hero', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&q=80' },
+  { label: 'About', href: '#about', image: 'https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=600&auto=format&q=80' },
+  { label: 'Menu', href: '#menu', image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&q=80' },
+  { label: 'Gallery', href: '#gallery', image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&auto=format&q=80' },
+  { label: 'Celebrations', href: '#celebrations', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&q=80' },
+  { label: 'Visit', href: '#visit', image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&auto=format&q=80' },
 ];
 ---
 
 <div
   id="nav-overlay"
-  class="fixed inset-0 z-40 bg-mango pointer-events-none opacity-0"
+  class="fixed inset-0 z-40 bg-ivory texture-paper pointer-events-none opacity-0"
   role="dialog"
   aria-modal="true"
   aria-label="Navigation menu"
 >
   <div class="h-full flex flex-col justify-between px-6 md:px-12 py-24 md:py-16">
-    <!-- Nav Links -->
     <div class="flex-1 flex items-center">
       <div class="flex w-full">
         <ul class="flex flex-col gap-2 md:gap-4 w-full md:w-1/2" role="list">
           {navLinks.map((link, i) => (
             <li>
-              <a
-                href={link.href}
-                class="nav-overlay-link group flex items-baseline gap-4 py-2"
-                data-nav-image={link.image}
-              >
+              <a href={link.href} class="nav-overlay-link group flex items-baseline gap-4 py-2" data-nav-image={link.image}>
                 <span class="text-label text-caramel">{String(i + 1).padStart(2, '0')}</span>
-                <span class="font-display text-4xl md:text-6xl lg:text-7xl italic font-bold text-forest group-hover:text-cocoa transition-colors duration-300">
+                <span class="font-display text-4xl md:text-6xl lg:text-7xl italic font-semibold text-cocoa group-hover:text-sage transition-colors duration-300">
                   {link.label}
                 </span>
               </a>
             </li>
           ))}
         </ul>
-
-        <!-- Hover Image Preview (desktop) -->
         <div class="hidden md:flex w-1/2 items-center justify-center relative">
-          <div id="nav-preview-image" class="w-72 h-96 rounded-2xl overflow-hidden opacity-0 scale-95 transition-all duration-500 tilt-right shadow-xl">
+          <div id="nav-preview-image" class="w-64 h-80 rounded-lg overflow-hidden opacity-0 scale-95 transition-all duration-500 tilt-right shadow-xl">
             <img src="" alt="" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Footer Info -->
-    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-8 border-t border-forest/15">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-8 border-t border-cocoa/10">
       <div>
-        <p class="text-label text-forest/50 mb-2">Get in touch</p>
-        <a href="tel:+918438459833" class="text-forest hover:text-cocoa transition-colors font-medium">+91 843 845 9833</a>
+        <p class="text-label text-cocoa/40 mb-2">Get in touch</p>
+        <a href="tel:+918438459833" class="text-cocoa hover:text-sage transition-colors font-medium">+91 843 845 9833</a>
       </div>
       <div class="flex gap-6">
-        <a href="https://wa.me/918438459833" class="text-label text-forest/50 hover:text-forest transition-colors" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="#" class="text-label text-forest/50 hover:text-forest transition-colors">Instagram</a>
+        <a href="https://wa.me/918438459833" class="text-label text-cocoa/40 hover:text-sage transition-colors" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" class="text-label text-cocoa/40 hover:text-sage transition-colors">Instagram</a>
       </div>
     </div>
   </div>

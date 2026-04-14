@@ -3,22 +3,20 @@ import MenuPanel from './MenuPanel.astro';
 import menuData from '../data/menu.json';
 
 const categoryStyles = [
-  { bgColor: 'bg-strawberry', textColor: 'text-forest', priceColor: 'text-cocoa' },
-  { bgColor: 'bg-pistachio', textColor: 'text-forest', priceColor: 'text-forest' },
-  { bgColor: 'bg-mango', textColor: 'text-cocoa', priceColor: 'text-cocoa' },
-  { bgColor: 'bg-coconut', textColor: 'text-forest', priceColor: 'text-cocoa' },
+  { bgColor: 'bg-cream', textColor: 'text-cocoa', priceColor: 'text-caramel' },
+  { bgColor: 'bg-pistachio/20', textColor: 'text-forest', priceColor: 'text-forest' },
+  { bgColor: 'bg-butter/40', textColor: 'text-cocoa', priceColor: 'text-cocoa' },
+  { bgColor: 'bg-ivory', textColor: 'text-forest', priceColor: 'text-caramel' },
 ];
 ---
 
 <section id="menu" class="relative" data-section="menu">
-  <!-- Section Intro -->
-  <div class="px-6 md:px-12 py-20 bg-cream">
+  <div class="px-6 md:px-12 py-20 bg-cream texture-paper">
     <span class="text-label text-sage mb-6 block">03 — Menu</span>
-    <h2 class="text-display-lg text-forest mb-4">The Menu</h2>
-    <p class="text-script text-2xl text-caramel">Twenty-four ways to bake your day ✨</p>
+    <h2 class="text-display-lg text-cocoa mb-4">The Menu</h2>
+    <p class="text-script text-2xl text-caramel">Twenty-four ways to bake your day</p>
   </div>
 
-  <!-- Horizontal Scroll Container (desktop) / Vertical Stack (mobile) -->
   <div id="menu-scroll" class="relative">
     <div id="menu-track" class="flex flex-col md:flex-row md:flex-nowrap">
       {menuData.categories.map((category, i) => (
@@ -36,15 +34,13 @@ const categoryStyles = [
     </div>
   </div>
 
-  <!-- Category Navigation Dots (desktop) -->
-  <div id="menu-dots" class="hidden md:flex justify-center gap-3 py-8 bg-coconut">
+  <div id="menu-dots" class="hidden md:flex justify-center gap-3 py-8 bg-cream">
     {menuData.categories.map((cat, i) => (
       <button
-        class="menu-dot w-2.5 h-2.5 rounded-full bg-forest/20 transition-all duration-500"
+        class="menu-dot w-2.5 h-2.5 rounded-full bg-caramel/20 transition-all duration-500"
         data-index={i}
         aria-label={`Go to ${cat.name} category`}
-      >
-      </button>
+      ></button>
     ))}
   </div>
 </section>

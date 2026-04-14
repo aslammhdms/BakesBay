@@ -1,0 +1,17 @@
+---
+interface Props { class?: string; size?: string; }
+const { class: className = '', size = 'w-8 h-12' } = Astro.props;
+---
+<svg class={`${size} ${className} steam-anim`} viewBox="0 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 45C10 45 8 35 12 28C16 21 8 16 12 8" stroke="#C8935B" stroke-width="1.5" stroke-linecap="round" opacity="0.25" />
+  <path d="M20 45C20 45 18 37 22 30C26 23 18 18 22 10" stroke="#C8935B" stroke-width="1.5" stroke-linecap="round" opacity="0.2" />
+  <path d="M15 48C15 48 14 40 17 34C20 28 14 22 17 14" stroke="#C8935B" stroke-width="1" stroke-linecap="round" opacity="0.15" />
+</svg>
+<style>
+  @keyframes steam-float {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-6px); opacity: 0.6; }
+  }
+  .steam-anim { animation: steam-float 3s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .steam-anim { animation: none; } }
+</style>

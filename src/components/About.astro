@@ -1,77 +1,73 @@
 ---
-import Strawberry from './illustrations/Strawberry.astro';
-import Mint from './illustrations/Mint.astro';
+import Whisk from './illustrations/Whisk.astro';
 ---
 
-<section id="about" class="relative py-24 md:py-40 px-6 md:px-12 bg-pistachio/30 overflow-hidden" data-section="about">
-  <!-- Decorative fruit -->
-  <div class="absolute top-12 right-8 opacity-30 hidden md:block">
-    <Strawberry size="w-24 h-24" class="tilt-right" />
-  </div>
-  <div class="absolute bottom-16 left-4 opacity-20 hidden md:block">
-    <Mint size="w-16 h-16" class="tilt-left" />
+<section id="about" class="relative py-24 md:py-40 px-6 md:px-12 bg-ivory texture-paper overflow-hidden" data-section="about">
+  <!-- Whisk decoration -->
+  <div class="absolute top-16 right-12 opacity-20 hidden md:block">
+    <Whisk size="w-10 h-20" class="tilt-right" />
   </div>
 
-  <!-- Section Label -->
   <div class="mb-16 md:mb-24">
-    <span class="text-label text-sage">02 — Our Story</span>
+    <span class="text-label text-sage">02 — Our Craft</span>
   </div>
 
   <div class="flex flex-col md:flex-row gap-12 md:gap-20">
-    <!-- Left: Polaroid-style photos -->
+    <!-- Left: Polaroid photos -->
     <div class="w-full md:w-[40%] relative">
       <div class="relative">
         <div class="bg-white p-3 pb-12 rounded-sm shadow-lg tilt-left inline-block">
           <img
-            src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=600&q=80"
-            alt="Baker kneading fresh dough on a flour-dusted wooden surface"
+            src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=600&auto=format&q=80"
+            alt="Baker's hands kneading dough on a flour-dusted wooden surface"
             class="w-64 h-72 object-cover rounded-sm"
             loading="lazy"
           />
-          <p class="text-script text-base text-cocoa/60 mt-2 text-center">fresh every morning</p>
+          <p class="text-script text-base text-caramel/60 mt-2 text-center">fresh every morning</p>
         </div>
         <div class="absolute -bottom-8 -right-4 md:right-8 bg-white p-3 pb-12 rounded-sm shadow-lg tilt-right inline-block">
           <img
-            src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&q=80"
-            alt="Golden croissants fresh from the oven"
+            src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&auto=format&q=80"
+            alt="Golden croissants cooling on a wire rack"
             class="w-40 h-48 object-cover rounded-sm"
             loading="lazy"
           />
-          <p class="text-script text-sm text-cocoa/60 mt-2 text-center">butter & love</p>
+          <p class="text-script text-sm text-caramel/60 mt-2 text-center">butter & patience</p>
         </div>
       </div>
     </div>
 
     <!-- Right: Editorial Copy -->
     <div class="w-full md:w-[55%] md:ml-auto flex flex-col justify-center">
-      <h2 class="text-display-lg text-forest mb-10 md:mb-16">Our Story</h2>
+      <h2 class="text-display-lg text-cocoa mb-10 md:mb-16">Our Story</h2>
 
       <div class="max-w-xl space-y-6">
-        <p class="text-lg md:text-xl leading-relaxed text-forest/85">
+        <p class="text-lg md:text-xl leading-relaxed text-espresso/80">
           <span class="font-display text-6xl md:text-7xl italic float-left mr-3 mt-1 leading-[0.8] text-caramel font-bold">B</span>akes
           Bay was born from a simple belief — that every dessert should feel like an occasion. Nestled along the
           quiet stretch of Maruthamalai Road in Coimbatore, we set out to craft beverages and desserts that don't
           just satisfy a craving but create a moment worth remembering.
         </p>
 
-        <p class="text-base leading-relaxed text-forest/70">
+        <p class="text-base leading-relaxed text-espresso/60">
           From our signature Royal Falooda — a towering celebration of rose, vermicelli, and hand-churned ice
           cream — to our freshly muddled mojitos and creamy lassis, every item on our menu is made by hand,
           made fresh, and made with intention.
         </p>
 
-        <!-- Pull Quote -->
-        <blockquote class="border-l-4 border-strawberry pl-6 py-4 my-10">
+        <blockquote class="border-l-3 border-caramel/40 pl-6 py-4 my-10">
           <p class="text-script text-2xl md:text-3xl text-cocoa leading-snug">
-            "We don't just make desserts. We make the quiet moments between conversations a little sweeter."
+            "We don't just bake. We make the quiet moments between conversations a little sweeter."
           </p>
         </blockquote>
 
-        <p class="text-base leading-relaxed text-forest/70">
+        <p class="text-base leading-relaxed text-espresso/60">
           What started as a neighbourhood dessert bar has become Coimbatore's destination for those who
           believe that a well-made falooda is a form of art, and that the best conversations happen over
-          something sweet.
+          something freshly baked.
         </p>
+
+        <p class="text-script text-lg text-caramel mt-8">— The Bakes Bay Family</p>
       </div>
     </div>
   </div>
