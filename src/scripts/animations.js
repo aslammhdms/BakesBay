@@ -4,34 +4,28 @@ import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Check reduced motion preference
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export function initAnimations() {
   if (prefersReducedMotion) {
-    // Skip all animations, show content immediately
     document.getElementById('preloader')?.remove();
     return;
   }
 
-  // Initialize Lenis smooth scroll
   const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
   });
 
-  // Connect Lenis to GSAP ticker
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
   gsap.ticker.lagSmoothing(0);
 
-  // Store lenis on window for nav overlay access
   window.__lenis = lenis;
 
-  // Run animation sequences
   animatePreloader(() => {
     animateHero();
     animateAbout();
@@ -50,7 +44,6 @@ function animatePreloader(onComplete) {
     return;
   }
 
-  // Check if already shown this session
   if (sessionStorage.getItem('preloaderShown')) {
     preloader.remove();
     onComplete?.();
@@ -64,41 +57,43 @@ function animatePreloader(onComplete) {
     },
   });
 
-  // Circle stroke animation
-  const circleEl = preloader.querySelector('.preloader-circle');
-  if (circleEl) {
-    const length = circleEl.getTotalLength?.() || 346;
-    gsap.set(circleEl, { strokeDasharray: length, strokeDashoffset: length });
-    tl.to(circleEl, { strokeDashoffset: 0, duration: 1.8, ease: 'power2.inOut' });
-  }
-
   // Logo fade in
   const logoEl = document.getElementById('preloader-logo');
   if (logoEl) {
-    tl.to(logoEl, { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' }, '-=1.2');
+    tl.to(logoEl, { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.4)' });
   }
 
-  // Tagline fade in
-  tl.to('#preloader-tagline', { opacity: 1, duration: 0.6, ease: 'power1.in' }, '-=0.4');
+  // Tagline types in
+  tl.to('#preloader-tagline', { opacity: 1, duration: 0.5, ease: 'power1.in' }, '-=0.3');
 
-  // Counter animation
+  // Fruit illustrations pop in
+  const fruits = preloader.querySelectorAll('.preloader-fruit');
+  tl.to(fruits, {
+    opacity: 1,
+    scale: 1,
+    duration: 0.5,
+    stagger: 0.15,
+    ease: 'back.out(2)',
+  }, '-=0.2');
+
+  // Counter
   const counter = { val: 0 };
   const counterEl = document.getElementById('preloader-counter');
   tl.to(counter, {
     val: 100,
-    duration: 2.5,
+    duration: 2,
     ease: 'power1.inOut',
     onUpdate: () => {
       if (counterEl) counterEl.textContent = Math.round(counter.val) + '%';
     },
   }, 0);
 
-  // Curtain wipe out
+  // Curtain wipe in strawberry pink
   tl.to(preloader, {
     yPercent: -100,
-    duration: 0.8,
+    duration: 0.7,
     ease: 'power3.inOut',
-    delay: 0.3,
+    delay: 0.2,
   });
 
   tl.add(() => {
@@ -107,35 +102,25 @@ function animatePreloader(onComplete) {
 }
 
 function animateHero() {
-  // Headline reveal
+  // Headline reveal with bounce
   gsap.utils.toArray('.hero-headline > div').forEach((line, i) => {
     const text = line.querySelector('h1');
-    const num = line.querySelector('span');
     if (text) {
       gsap.from(text, {
         yPercent: 120,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.2 + i * 0.15,
-      });
-    }
-    if (num) {
-      gsap.from(num, {
-        opacity: 0,
-        x: -20,
-        duration: 0.8,
-        ease: 'power2.out',
-        delay: 0.4 + i * 0.15,
+        duration: 0.9,
+        ease: 'back.out(1.2)',
+        delay: 0.2 + i * 0.12,
       });
     }
   });
 
-  // Hero image parallax
+  // Hero image
   const heroImg = document.querySelector('.hero-image');
   if (heroImg) {
-    gsap.from(heroImg, { opacity: 0, scale: 1.05, duration: 1.2, ease: 'power2.out', delay: 0.5 });
+    gsap.from(heroImg, { opacity: 0, scale: 0.9, rotation: 5, duration: 1, ease: 'back.out(1.4)', delay: 0.5 });
     gsap.to(heroImg, {
-      yPercent: 15,
+      yPercent: 10,
       ease: 'none',
       scrollTrigger: {
         trigger: '#hero',
@@ -151,21 +136,23 @@ function animateAbout() {
   const section = document.getElementById('about');
   if (!section) return;
 
-  // Image slide in
-  gsap.from(section.querySelector('img')?.parentElement, {
-    x: -60,
+  // Polaroid photos slide in
+  gsap.from(section.querySelectorAll('.bg-white'), {
+    x: -40,
+    rotation: -8,
     opacity: 0,
-    duration: 1,
-    ease: 'power2.out',
+    duration: 0.9,
+    stagger: 0.2,
+    ease: 'back.out(1.2)',
     scrollTrigger: { trigger: section, start: 'top 70%' },
   });
 
-  // Text elements stagger
+  // Text stagger
   gsap.from(section.querySelectorAll('.max-w-xl > *'), {
-    y: 40,
+    y: 30,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
+    duration: 0.7,
+    stagger: 0.12,
     ease: 'power2.out',
     scrollTrigger: { trigger: section, start: 'top 60%' },
   });
@@ -176,7 +163,6 @@ function animateMenuScroll() {
   const track = document.getElementById('menu-track');
   if (!menuSection || !track) return;
 
-  // Only horizontal scroll on desktop
   if (window.innerWidth < 768) return;
 
   const panels = track.querySelectorAll('.menu-panel');
@@ -195,29 +181,26 @@ function animateMenuScroll() {
       scrub: 1,
       anticipatePin: 1,
       onUpdate: (self) => {
-        // Update dots
         const dots = document.querySelectorAll('.menu-dot');
         const activeIndex = Math.round(self.progress * (panels.length - 1));
         dots.forEach((dot, i) => {
-          dot.style.backgroundColor = i === activeIndex ? '#F5F1E8' : 'rgba(245,241,232,0.2)';
-          dot.style.width = i === activeIndex ? '2rem' : '0.5rem';
+          dot.style.backgroundColor = i === activeIndex ? '#2F4A3F' : 'rgba(47,74,63,0.2)';
+          dot.style.width = i === activeIndex ? '2rem' : '0.625rem';
         });
       },
     },
   });
 
-  // Staggered item reveals per panel
   panels.forEach((panel) => {
     gsap.from(panel.querySelectorAll('.menu-item'), {
       x: 30,
       opacity: 0,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power2.out',
+      duration: 0.5,
+      stagger: 0.06,
+      ease: 'back.out(1)',
       scrollTrigger: {
         trigger: panel,
         start: 'left 80%',
-        containerAnimation: gsap.getById?.('menuScroll'),
         toggleActions: 'play none none none',
       },
     });
@@ -229,11 +212,12 @@ function animateGallery() {
   if (!items.length) return;
 
   gsap.from(items, {
-    scale: 0.85,
+    scale: 0.8,
     opacity: 0,
-    duration: 0.8,
+    rotation: (i) => (i % 2 === 0 ? -5 : 5),
+    duration: 0.7,
     stagger: 0.1,
-    ease: 'power2.out',
+    ease: 'back.out(1.2)',
     scrollTrigger: {
       trigger: '#gallery',
       start: 'top 70%',
@@ -248,8 +232,8 @@ function animateCelebrations() {
   gsap.from(section.querySelectorAll('span, h2, blockquote, p, a'), {
     y: 30,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.12,
+    duration: 0.7,
+    stagger: 0.1,
     ease: 'power2.out',
     scrollTrigger: { trigger: section, start: 'top 60%' },
   });
@@ -274,11 +258,11 @@ function animateContact() {
   const section = document.getElementById('contact');
   if (!section) return;
 
-  gsap.from(section.querySelectorAll('span, h2, div, a'), {
+  gsap.from(section.querySelectorAll('span, h2, p, div, a'), {
     y: 30,
     opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
+    duration: 0.7,
+    stagger: 0.08,
     ease: 'power2.out',
     scrollTrigger: { trigger: section, start: 'top 70%' },
   });

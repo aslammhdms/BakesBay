@@ -2,21 +2,26 @@
 
 /* ─── Design Tokens ─── */
 @theme {
-  --color-dark: #2C1810;
-  --color-dark-surface: #3B2318;
-  --color-sage: #5F8F84;
-  --color-sage-light: #8BB8B0;
-  --color-sage-dark: #4A7A6F;
-  --color-sage-surface: #527E74;
-  --color-gold: #D4A574;
-  --color-cream: #FFF8F0;
-  --color-parchment: #F5E6D3;
-  --color-muted: #A89F91;
-  --color-muted-on-sage: #B8D4CD;
-  --color-warm-brown: #8B6F47;
+  /* Brand anchors */
+  --color-sage: #8BB8B0;
+  --color-forest: #2F4A3F;
 
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Inter', sans-serif;
+  /* Fruity palette */
+  --color-strawberry: #F4A5A5;
+  --color-mango: #F5C04A;
+  --color-caramel: #D4915A;
+  --color-blueberry: #6B5B95;
+  --color-pistachio: #BDD4A3;
+  --color-coconut: #FAF3E7;
+  --color-cocoa: #5C3A21;
+  --color-passionfruit: #E87A3C;
+
+  /* Backgrounds */
+  --color-cream: #FFF9F0;
+  --color-cream-warm: #FAF3E7;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'DM Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-script: 'Caveat', cursive;
 }
@@ -24,8 +29,8 @@
 /* ─── Base Styles ─── */
 @layer base {
   html {
-    background-color: var(--color-sage);
-    color: var(--color-cream);
+    background-color: var(--color-coconut);
+    color: var(--color-forest);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,14 +38,14 @@
   }
 
   body {
-    background-color: var(--color-sage);
+    background-color: var(--color-coconut);
     min-height: 100vh;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: var(--color-gold);
-    color: var(--color-dark);
+    background-color: var(--color-sage);
+    color: white;
   }
 
   /* Lenis smooth scroll */
@@ -65,10 +70,11 @@
 @layer components {
   .text-display-xl {
     font-family: var(--font-display);
-    font-size: clamp(3.5rem, 10vw, 12rem);
+    font-size: clamp(3.5rem, 10vw, 13rem);
     line-height: 0.9;
     letter-spacing: -0.02em;
-    font-weight: 300;
+    font-weight: 800;
+    font-style: italic;
   }
 
   .text-display-lg {
@@ -76,19 +82,21 @@
     font-size: clamp(2.5rem, 6vw, 7rem);
     line-height: 0.95;
     letter-spacing: -0.01em;
-    font-weight: 400;
+    font-weight: 700;
+    font-style: italic;
   }
 
   .text-display-md {
     font-family: var(--font-display);
     font-size: clamp(1.75rem, 4vw, 4rem);
     line-height: 1.1;
-    font-weight: 400;
+    font-weight: 600;
+    font-style: italic;
   }
 
   .text-script {
     font-family: var(--font-script);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .text-label {
@@ -101,76 +109,35 @@
   .text-price {
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    color: var(--color-gold);
+    color: var(--color-caramel);
   }
 
-  /* ─── Textures ─── */
-  .texture-grain {
-    position: relative;
+  /* ─── Wavy Section Divider ─── */
+  .wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
   }
 
-  .texture-grain::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 256px 256px;
-    pointer-events: none;
-    z-index: 1;
-    mix-blend-mode: overlay;
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 60px;
   }
 
-  .texture-grain > * {
-    position: relative;
-    z-index: 2;
-  }
-
-  .texture-flour {
-    position: relative;
-  }
-
-  .texture-flour::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: 5%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(ellipse, rgba(255,248,240,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-  }
-}
-
-/* ─── Decorative Divider ─── */
-@layer components {
-  .divider-wheat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 0;
-    color: var(--color-cream);
-    opacity: 0.3;
-  }
-
-  .divider-wheat::before,
-  .divider-wheat::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, currentColor, transparent);
-  }
-
+  /* ─── Hand-drawn underline ─── */
   .underline-hand {
-    background-image: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8C30 3 60 5 90 7C120 9 150 4 198 6' stroke='%23D4A574' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8C30 3 60 5 90 7C120 9 150 4 198 6' stroke='%23D4915A' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100% 12px;
-    padding-bottom: 14px;
+    padding-bottom: 16px;
   }
+
+  /* ─── Tilted card ─── */
+  .tilt-left { transform: rotate(-2deg); }
+  .tilt-right { transform: rotate(2deg); }
+  .tilt-slight { transform: rotate(1.5deg); }
 }
 
 /* ─── Reduced Motion ─── */

@@ -1,17 +1,17 @@
 ---
 const navLinks = [
   { label: 'Home', href: '#hero', image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=600&q=80' },
-  { label: 'About', href: '#about', image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80' },
+  { label: 'About', href: '#about', image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80' },
   { label: 'Menu', href: '#menu', image: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80' },
   { label: 'Gallery', href: '#gallery', image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80' },
-  { label: 'Celebrations', href: '#celebrations', image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80' },
+  { label: 'Celebrations', href: '#celebrations', image: 'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&q=80' },
   { label: 'Visit', href: '#visit', image: 'https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=600&q=80' },
 ];
 ---
 
 <div
   id="nav-overlay"
-  class="fixed inset-0 z-40 bg-sage-dark pointer-events-none opacity-0"
+  class="fixed inset-0 z-40 bg-mango pointer-events-none opacity-0"
   role="dialog"
   aria-modal="true"
   aria-label="Navigation menu"
@@ -20,7 +20,6 @@ const navLinks = [
     <!-- Nav Links -->
     <div class="flex-1 flex items-center">
       <div class="flex w-full">
-        <!-- Links Column -->
         <ul class="flex flex-col gap-2 md:gap-4 w-full md:w-1/2" role="list">
           {navLinks.map((link, i) => (
             <li>
@@ -29,8 +28,8 @@ const navLinks = [
                 class="nav-overlay-link group flex items-baseline gap-4 py-2"
                 data-nav-image={link.image}
               >
-                <span class="text-label text-gold">{String(i + 1).padStart(2, '0')}</span>
-                <span class="font-display text-4xl md:text-6xl lg:text-7xl italic font-light text-cream group-hover:text-dark transition-colors duration-500">
+                <span class="text-label text-caramel">{String(i + 1).padStart(2, '0')}</span>
+                <span class="font-display text-4xl md:text-6xl lg:text-7xl italic font-bold text-forest group-hover:text-cocoa transition-colors duration-300">
                   {link.label}
                 </span>
               </a>
@@ -40,7 +39,7 @@ const navLinks = [
 
         <!-- Hover Image Preview (desktop) -->
         <div class="hidden md:flex w-1/2 items-center justify-center relative">
-          <div id="nav-preview-image" class="w-72 h-96 rounded-sm overflow-hidden opacity-0 scale-95 transition-all duration-500">
+          <div id="nav-preview-image" class="w-72 h-96 rounded-2xl overflow-hidden opacity-0 scale-95 transition-all duration-500 tilt-right shadow-xl">
             <img src="" alt="" class="w-full h-full object-cover" loading="lazy" />
           </div>
         </div>
@@ -48,14 +47,14 @@ const navLinks = [
     </div>
 
     <!-- Footer Info -->
-    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-8 border-t border-cream/10">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pt-8 border-t border-forest/15">
       <div>
-        <p class="text-label text-muted mb-2">Get in touch</p>
-        <a href="tel:+918438459833" class="text-cream hover:text-sage transition-colors">+91 843 845 9833</a>
+        <p class="text-label text-forest/50 mb-2">Get in touch</p>
+        <a href="tel:+918438459833" class="text-forest hover:text-cocoa transition-colors font-medium">+91 843 845 9833</a>
       </div>
       <div class="flex gap-6">
-        <a href="https://wa.me/918438459833" class="text-label text-muted hover:text-sage transition-colors" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="#" class="text-label text-muted hover:text-sage transition-colors">Instagram</a>
+        <a href="https://wa.me/918438459833" class="text-label text-forest/50 hover:text-forest transition-colors" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" class="text-label text-forest/50 hover:text-forest transition-colors">Instagram</a>
       </div>
     </div>
   </div>

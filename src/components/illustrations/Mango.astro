@@ -1,0 +1,19 @@
+---
+interface Props {
+  class?: string;
+  size?: string;
+}
+const { class: className = '', size = 'w-16 h-16' } = Astro.props;
+---
+<svg class={`${size} ${className}`} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="40" cy="44" rx="24" ry="30" transform="rotate(-15 40 44)" fill="#F5C04A" />
+  <ellipse cx="40" cy="44" rx="24" ry="30" transform="rotate(-15 40 44)" fill="url(#mango-grad)" />
+  <path d="M44 14C48 10 52 12 50 16" stroke="#2F4A3F" stroke-width="2" stroke-linecap="round" />
+  <path d="M42 16C42 10 46 8 50 10" stroke="#BDD4A3" stroke-width="3" stroke-linecap="round" />
+  <defs>
+    <radialGradient id="mango-grad" cx="0.6" cy="0.7" r="0.5">
+      <stop offset="0%" stop-color="#E87A3C" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#F5C04A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

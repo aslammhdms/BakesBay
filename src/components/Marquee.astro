@@ -1,13 +1,13 @@
 ---
-const items = ['CROISSANT', 'SOURDOUGH', 'FALOODA', 'MOJITO', 'CINNAMON ROLL', 'LASSI', 'CHEESECAKE', 'TENDER COCONUT', 'ÉCLAIR'];
+const items = ['FALOODA', 'MOJITO', 'LASSI', 'TENDER COCONUT', 'CROISSANT', 'CHEESECAKE', 'MANGO', 'STRAWBERRY'];
 const separator = ' · ';
 const marqueeText = items.join(separator) + separator;
 ---
 
-<div class="relative overflow-hidden py-6 md:py-8 border-y border-cream/15 bg-sage-dark" aria-hidden="true">
+<div class="relative overflow-hidden py-5 md:py-6 bg-sage" aria-hidden="true">
   <div class="marquee-track flex whitespace-nowrap">
     {[0, 1, 2].map(() => (
-      <span class="font-display text-3xl md:text-5xl lg:text-6xl italic text-cream/25 shrink-0 pr-4">
+      <span class="font-display text-3xl md:text-5xl lg:text-6xl italic font-bold text-white/30 shrink-0 pr-4">
         {marqueeText}
       </span>
     ))}

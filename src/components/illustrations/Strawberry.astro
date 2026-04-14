@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+  size?: string;
+}
+const { class: className = '', size = 'w-16 h-16' } = Astro.props;
+---
+<svg class={`${size} ${className}`} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="40" cy="48" rx="22" ry="28" fill="#F4A5A5" />
+  <ellipse cx="40" cy="48" rx="22" ry="28" fill="url(#strawberry-grad)" />
+  <path d="M30 24C35 18 45 18 50 24C48 22 42 20 40 22C38 20 32 22 30 24Z" fill="#BDD4A3" />
+  <path d="M40 22C40 16 38 12 40 8" stroke="#2F4A3F" stroke-width="2" stroke-linecap="round" />
+  <circle cx="34" cy="40" r="1.5" fill="#E87A3C" opacity="0.6" />
+  <circle cx="44" cy="44" r="1.5" fill="#E87A3C" opacity="0.6" />
+  <circle cx="38" cy="52" r="1.5" fill="#E87A3C" opacity="0.6" />
+  <circle cx="46" cy="36" r="1.5" fill="#E87A3C" opacity="0.5" />
+  <circle cx="36" cy="60" r="1.5" fill="#E87A3C" opacity="0.4" />
+  <circle cx="44" cy="56" r="1.5" fill="#E87A3C" opacity="0.5" />
+  <defs>
+    <radialGradient id="strawberry-grad" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" stop-color="#F4A5A5" stop-opacity="0" />
+      <stop offset="100%" stop-color="#D4915A" stop-opacity="0.2" />
+    </radialGradient>
+  </defs>
+</svg>

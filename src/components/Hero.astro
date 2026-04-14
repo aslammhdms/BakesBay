@@ -1,57 +1,76 @@
 ---
+import Strawberry from './illustrations/Strawberry.astro';
+import Mango from './illustrations/Mango.astro';
+import Mint from './illustrations/Mint.astro';
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-dark texture-grain" data-section="hero">
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-coconut" data-section="hero">
   <div class="w-full px-6 md:px-12 py-20 md:py-0">
-    <div class="flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-0">
-      <!-- Left: Headline (60%) -->
-      <div class="w-full md:w-[60%] relative z-10">
-        <p class="text-script text-2xl md:text-3xl text-gold mb-4">Welcome to</p>
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+      <!-- Left: Headline (55%) -->
+      <div class="w-full md:w-[55%] relative z-10">
+        <p class="text-script text-2xl md:text-3xl text-caramel mb-2">est. Coimbatore</p>
         <div class="hero-headline">
-          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
-            <span class="text-price text-sm md:text-base shrink-0">01</span>
-            <h1 class="text-display-xl italic">Bake</h1>
+          <div class="overflow-hidden">
+            <h1 class="text-display-xl text-strawberry">Bake</h1>
           </div>
-          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
-            <span class="text-price text-sm md:text-base shrink-0">02</span>
-            <h1 class="text-display-xl italic">Your</h1>
+          <div class="overflow-hidden">
+            <h1 class="text-display-xl text-caramel">Your</h1>
           </div>
-          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
-            <span class="text-price text-sm md:text-base shrink-0">03</span>
-            <h1 class="text-display-xl italic">Day</h1>
+          <div class="overflow-hidden relative">
+            <h1 class="text-display-xl text-sage underline-hand inline-block">Day</h1>
           </div>
         </div>
-        <p class="text-script text-xl md:text-2xl text-cream/60 mt-6">freshly baked, made with love</p>
+        <p class="text-script text-xl text-forest/60 mt-4">fresh daily! ✨ made with love</p>
       </div>
 
-      <!-- Right: Hero Image (40%) -->
-      <div class="w-full md:w-[40%] relative">
-        <div class="hero-image relative aspect-[3/4] max-h-[70vh] overflow-hidden rounded-sm">
+      <!-- Right: Hero Image + Floating Fruits (45%) -->
+      <div class="w-full md:w-[45%] relative flex justify-center">
+        <div class="hero-image relative w-72 h-96 md:w-80 md:h-[28rem] overflow-hidden rounded-3xl tilt-right shadow-2xl">
           <img
-            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"
-            alt="Freshly baked artisanal bread with golden crust and flour dust"
+            src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&q=80"
+            alt="Royal Falooda — layers of rose syrup, vermicelli, and ice cream in a tall glass"
             class="w-full h-full object-cover"
             loading="eager"
             fetchpriority="high"
           />
-          <!-- Warm gradient overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-dark/50 via-dark/10 to-transparent"></div>
         </div>
-        <!-- Flour dust decoration -->
-        <div class="absolute -top-8 -right-8 w-32 h-32 bg-cream/5 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- Floating fruit illustrations -->
+        <div class="absolute -top-4 -left-8 md:left-0 animate-bounce" style="animation-duration: 3s;">
+          <Strawberry size="w-16 h-16 md:w-20 md:h-20" />
+        </div>
+        <div class="absolute -bottom-4 -right-4 md:right-4 animate-bounce" style="animation-duration: 4s; animation-delay: 0.5s;">
+          <Mango size="w-18 h-18 md:w-24 md:h-24" />
+        </div>
+        <div class="absolute top-1/3 -right-8 md:-right-4 animate-bounce" style="animation-duration: 3.5s; animation-delay: 1s;">
+          <Mint size="w-10 h-10" />
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Bottom Ticker -->
-  <div class="absolute bottom-0 left-0 w-full border-t border-gold/20 py-4">
-    <div class="flex items-center justify-between px-6 md:px-12">
-      <p class="text-label text-gold/60 text-xs">
-        Est. Coimbatore — Maruthamalai Road — Handcrafted Daily
-      </p>
-      <p class="text-label text-gold/60 text-xs hidden md:block animate-pulse">
-        scroll to indulge ↓
-      </p>
+  <!-- Strawberry Pink Ticker -->
+  <div class="absolute bottom-0 left-0 w-full bg-strawberry py-3 overflow-hidden">
+    <div class="marquee-hero flex whitespace-nowrap">
+      {[0, 1, 2].map(() => (
+        <span class="font-display text-xl md:text-2xl italic font-bold text-forest/70 shrink-0 pr-8">
+          FRESH · HANDCRAFTED · FALOODA · MOJITO · LASSI · MADE DAILY IN COIMBATORE ·&nbsp;
+        </span>
+      ))}
     </div>
   </div>
 </section>
+
+<style>
+  .marquee-hero {
+    animation: marquee-hero 25s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee-hero {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-hero { animation: none; }
+  }
+</style>

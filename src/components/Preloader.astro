@@ -1,26 +1,35 @@
 ---
+import Strawberry from './illustrations/Strawberry.astro';
+import Mango from './illustrations/Mango.astro';
+import Mint from './illustrations/Mint.astro';
 ---
 
-<div id="preloader" class="fixed inset-0 z-50 bg-dark flex items-center justify-center" aria-hidden="true">
+<div id="preloader" class="fixed inset-0 z-50 bg-coconut flex items-center justify-center" aria-hidden="true">
   <div class="relative flex flex-col items-center">
     <!-- Logo -->
-    <div id="preloader-logo" class="w-28 h-28 md:w-36 md:h-36 mb-8 opacity-0">
+    <div id="preloader-logo" class="w-28 h-28 md:w-36 md:h-36 mb-6 opacity-0">
       <img src="/logo.png" alt="" class="w-full h-full object-contain" />
     </div>
 
-    <!-- SVG Swirl Stroke Animation -->
-    <svg id="preloader-swirl" viewBox="0 0 120 120" class="absolute top-0 w-28 h-28 md:w-36 md:h-36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="55" stroke="#D4A574" stroke-width="1" fill="none" class="preloader-circle" />
-    </svg>
-
-    <!-- Tagline -->
-    <p id="preloader-tagline" class="text-script text-2xl text-gold tracking-wide opacity-0">
+    <!-- Tagline in script -->
+    <p id="preloader-tagline" class="text-script text-3xl text-caramel tracking-wide opacity-0">
       Bake Your Day
     </p>
+
+    <!-- Floating fruit illustrations -->
+    <div class="absolute -top-8 -left-16 opacity-0 preloader-fruit">
+      <Strawberry size="w-12 h-12" />
+    </div>
+    <div class="absolute -top-4 -right-20 opacity-0 preloader-fruit">
+      <Mango size="w-14 h-14" />
+    </div>
+    <div class="absolute bottom-0 -left-12 opacity-0 preloader-fruit">
+      <Mint size="w-10 h-10" />
+    </div>
   </div>
 
   <!-- Percentage Counter -->
-  <span id="preloader-counter" class="absolute bottom-8 right-8 font-mono text-sm text-muted tabular-nums">
+  <span id="preloader-counter" class="absolute bottom-8 right-8 font-mono text-sm text-caramel/60 tabular-nums">
     0%
   </span>
 </div>

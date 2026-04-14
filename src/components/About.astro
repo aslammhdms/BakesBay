@@ -1,63 +1,76 @@
 ---
+import Strawberry from './illustrations/Strawberry.astro';
+import Mint from './illustrations/Mint.astro';
 ---
 
-<section id="about" class="relative py-24 md:py-40 px-6 md:px-12 bg-sage texture-grain texture-flour" data-section="about">
-  <!-- Wheat Divider Top -->
-  <div class="divider-wheat mb-16 md:mb-24">
-    <span class="text-script text-xl text-cream/50">our story</span>
+<section id="about" class="relative py-24 md:py-40 px-6 md:px-12 bg-pistachio/30 overflow-hidden" data-section="about">
+  <!-- Decorative fruit -->
+  <div class="absolute top-12 right-8 opacity-30 hidden md:block">
+    <Strawberry size="w-24 h-24" class="tilt-right" />
+  </div>
+  <div class="absolute bottom-16 left-4 opacity-20 hidden md:block">
+    <Mint size="w-16 h-16" class="tilt-left" />
   </div>
 
   <!-- Section Label -->
   <div class="mb-16 md:mb-24">
-    <span class="text-label text-cream/60">02 — Origin</span>
+    <span class="text-label text-sage">02 — Our Story</span>
   </div>
 
   <div class="flex flex-col md:flex-row gap-12 md:gap-20">
-    <!-- Left: Image -->
-    <div class="w-full md:w-[40%]">
-      <div class="relative aspect-[3/4] overflow-hidden rounded-sm">
-        <img
-          src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=800&q=80"
-          alt="Baker's hands kneading fresh dough on a flour-dusted wooden surface"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-sage/30 to-transparent"></div>
+    <!-- Left: Polaroid-style photos -->
+    <div class="w-full md:w-[40%] relative">
+      <div class="relative">
+        <div class="bg-white p-3 pb-12 rounded-sm shadow-lg tilt-left inline-block">
+          <img
+            src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?w=600&q=80"
+            alt="Baker kneading fresh dough on a flour-dusted wooden surface"
+            class="w-64 h-72 object-cover rounded-sm"
+            loading="lazy"
+          />
+          <p class="text-script text-base text-cocoa/60 mt-2 text-center">fresh every morning</p>
+        </div>
+        <div class="absolute -bottom-8 -right-4 md:right-8 bg-white p-3 pb-12 rounded-sm shadow-lg tilt-right inline-block">
+          <img
+            src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&q=80"
+            alt="Golden croissants fresh from the oven"
+            class="w-40 h-48 object-cover rounded-sm"
+            loading="lazy"
+          />
+          <p class="text-script text-sm text-cocoa/60 mt-2 text-center">butter & love</p>
+        </div>
       </div>
-      <!-- Hand-drawn caption -->
-      <p class="text-script text-lg text-cream/50 mt-4 text-center">crafted with care, every single day</p>
     </div>
 
     <!-- Right: Editorial Copy -->
     <div class="w-full md:w-[55%] md:ml-auto flex flex-col justify-center">
-      <h2 class="text-display-lg italic mb-4 md:mb-6">Our Story</h2>
-      <div class="underline-hand inline-block mb-10 md:mb-16 w-48"></div>
+      <h2 class="text-display-lg text-forest mb-10 md:mb-16">Our Story</h2>
 
       <div class="max-w-xl space-y-6">
-        <p class="text-lg md:text-xl leading-relaxed text-cream/90">
-          <span class="font-display text-6xl md:text-7xl italic float-left mr-3 mt-1 leading-[0.8] text-gold">B</span>akes
-          Bay was born from a simple belief — that every bite should feel like an occasion. Nestled along the
-          quiet stretch of Maruthamalai Road in Coimbatore, we set out to craft baked goods, beverages, and desserts
-          that don't just satisfy a craving but create a moment worth remembering.
+        <p class="text-lg md:text-xl leading-relaxed text-forest/85">
+          <span class="font-display text-6xl md:text-7xl italic float-left mr-3 mt-1 leading-[0.8] text-caramel font-bold">B</span>akes
+          Bay was born from a simple belief — that every dessert should feel like an occasion. Nestled along the
+          quiet stretch of Maruthamalai Road in Coimbatore, we set out to craft beverages and desserts that don't
+          just satisfy a craving but create a moment worth remembering.
         </p>
 
-        <p class="text-base leading-relaxed text-cream/70">
-          From our ovens come golden croissants and crusty sourdough loaves each morning. Our signature Royal
-          Falooda — a towering celebration of rose, vermicelli, and hand-churned ice cream — sits alongside
-          freshly muddled mojitos, creamy lassis, and pastries that melt on the tongue.
+        <p class="text-base leading-relaxed text-forest/70">
+          From our signature Royal Falooda — a towering celebration of rose, vermicelli, and hand-churned ice
+          cream — to our freshly muddled mojitos and creamy lassis, every item on our menu is made by hand,
+          made fresh, and made with intention.
         </p>
 
         <!-- Pull Quote -->
-        <blockquote class="border-l-2 border-gold/50 pl-6 py-4 my-10">
-          <p class="text-script text-2xl md:text-3xl text-cream leading-snug">
-            "We don't just bake. We make the quiet moments between conversations a little sweeter."
+        <blockquote class="border-l-4 border-strawberry pl-6 py-4 my-10">
+          <p class="text-script text-2xl md:text-3xl text-cocoa leading-snug">
+            "We don't just make desserts. We make the quiet moments between conversations a little sweeter."
           </p>
         </blockquote>
 
-        <p class="text-base leading-relaxed text-cream/70">
-          What started as a neighbourhood bakery has become Coimbatore's destination for those who
-          believe that a well-made croissant is a form of art, a perfect falooda is a celebration, and
-          the best conversations happen over something freshly baked.
+        <p class="text-base leading-relaxed text-forest/70">
+          What started as a neighbourhood dessert bar has become Coimbatore's destination for those who
+          believe that a well-made falooda is a form of art, and that the best conversations happen over
+          something sweet.
         </p>
       </div>
     </div>

@@ -1,67 +1,57 @@
 ---
 ---
 
-<section id="visit" class="relative py-24 md:py-0" data-section="visit">
+<section id="visit" class="relative" data-section="visit">
   <div class="flex flex-col md:flex-row min-h-[80vh]">
     <!-- Left: Map -->
-    <div class="w-full md:w-1/2 min-h-[400px] md:min-h-0 relative bg-dark-surface overflow-hidden">
+    <div class="w-full md:w-1/2 min-h-[400px] md:min-h-0 relative bg-coconut overflow-hidden">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2!2d76.94!3d11.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzEyLjAiTiA3NsKwNTYnMjQuMCJF!5e0!3m2!1sen!2sin!4v1"
-        class="w-full h-full absolute inset-0 border-0 grayscale invert opacity-70 contrast-[1.2]"
+        class="w-full h-full absolute inset-0 border-0 sepia-[0.2] saturate-[0.8] opacity-90"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         title="Bakes Bay location on Google Maps"
       ></iframe>
-      <!-- Dark overlay for map -->
-      <div class="absolute inset-0 bg-dark/20 pointer-events-none"></div>
     </div>
 
-    <!-- Gold Divider (desktop) -->
-    <div class="hidden md:block w-px bg-cream/20"></div>
-
     <!-- Right: Info -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 md:py-24 bg-sage">
-      <span class="text-label text-cream/60 mb-8 block">06 — Visit</span>
-      <h2 class="text-display-md italic mb-4">Find Us</h2>
-      <p class="text-script text-xl text-cream/50 mb-12">come say hello</p>
+    <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-16 md:py-24 bg-coconut">
+      <span class="text-label text-sage mb-8 block">06 — Visit</span>
+      <h2 class="text-display-md text-forest mb-4">Find Us</h2>
+      <p class="text-script text-xl text-caramel mb-12">come say hello! 👋</p>
 
       <div class="space-y-8">
-        <!-- Address -->
         <div>
-          <p class="text-label text-cream/50 mb-2">Address</p>
-          <p class="font-display text-xl md:text-2xl italic leading-relaxed">
+          <p class="text-label text-sage mb-2">Address</p>
+          <p class="font-display text-xl md:text-2xl italic font-semibold text-forest leading-relaxed">
             Maruthamalai Road,<br />
             Coimbatore 641046,<br />
             Tamil Nadu, India
           </p>
         </div>
 
-        <!-- Hours -->
         <div>
-          <p class="text-label text-cream/50 mb-2">Hours</p>
-          <p class="font-display text-xl italic">
+          <p class="text-label text-sage mb-2">Hours</p>
+          <p class="font-display text-xl italic font-semibold text-forest">
             Everyday, 11am — 11pm
           </p>
         </div>
 
-        <!-- Phone -->
         <div>
-          <p class="text-label text-cream/50 mb-2">Telephone</p>
-          <a href="tel:+918438459833" class="font-display text-xl italic text-cream hover:text-dark transition-colors duration-300">
+          <p class="text-label text-sage mb-2">Telephone</p>
+          <a href="tel:+918438459833" class="font-display text-xl italic font-semibold text-forest hover:text-caramel transition-colors duration-300">
             +91 843 845 9833
           </a>
         </div>
 
-        <!-- Directions Link -->
         <a
           href="https://maps.google.com/?q=Bakes+Bay+Coimbatore"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-label text-gold hover:text-cream transition-colors duration-300 mt-4"
+          class="inline-flex items-center gap-2 text-script text-lg text-caramel hover:text-passionfruit transition-colors duration-300 mt-4 underline-hand"
         >
-          Get Directions
-          <span class="text-sm">↗</span>
+          Get Directions ↗
         </a>
       </div>
     </div>
