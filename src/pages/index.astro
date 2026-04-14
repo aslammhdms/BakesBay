@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Preloader from '../components/Preloader.astro';
+import Nav from '../components/Nav.astro';
+import NavOverlay from '../components/NavOverlay.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import About from '../components/About.astro';
+import Menu from '../components/Menu.astro';
+import Gallery from '../components/Gallery.astro';
+import Celebrations from '../components/Celebrations.astro';
+import Visit from '../components/Visit.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFab from '../components/WhatsAppFab.astro';
+import CustomCursor from '../components/CustomCursor.jsx';
+---
+
+<Layout>
+  <Preloader />
+  <Nav />
+  <NavOverlay />
+  <CustomCursor client:load />
+
+  <main id="main-content">
+    <Hero />
+    <Marquee />
+    <About />
+    <Menu />
+    <Gallery />
+    <Celebrations />
+    <Visit />
+    <Contact />
+  </main>
+
+  <Footer />
+  <WhatsAppFab />
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    document.addEventListener('DOMContentLoaded', initAnimations);
+  </script>
+
+  <script>
+    // Nav overlay toggle
+    const toggle = document.getElementById('nav-toggle');
+    const toggleText = document.getElementById('nav-toggle-text');
+    const overlay = document.getElementById('nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-overlay-link');
+    const previewImg = document.querySelector('#nav-preview-image img');
+    const previewContainer = document.getElementById('nav-preview-image');
+    let isOpen = false;
+
+    function openNav() {
+      isOpen = true;
+      overlay.style.pointerEvents = 'auto';
+      overlay.style.opacity = '1';
+      overlay.style.transition = 'opacity 0.5s ease';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggleText.textContent = 'Close';
+      window.__lenis?.stop();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      isOpen = false;
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggleText.textContent = 'Menu';
+      window.__lenis?.start();
+      document.body.style.overflow = '';
+    }
+
+    toggle?.addEventListener('click', () => {
+      isOpen ? closeNav() : openNav();
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) closeNav();
+    });
+
+    // Nav link hover image preview
+    navLinks.forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        const imgSrc = link.dataset.navImage;
+        if (previewImg && imgSrc) {
+          previewImg.src = imgSrc;
+          previewContainer.style.opacity = '1';
+          previewContainer.style.transform = 'scale(1)';
+        }
+      });
+      link.addEventListener('mouseleave', () => {
+        if (previewContainer) {
+          previewContainer.style.opacity = '0';
+          previewContainer.style.transform = 'scale(0.95)';
+        }
+      });
+
+      // Close overlay on link click
+      link.addEventListener('click', () => {
+        closeNav();
+      });
+    });
+  </script>
+</Layout>

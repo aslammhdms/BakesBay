@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "name": "Freshly Baked",
+      "slug": "baked",
+      "tagline": "From our ovens, still warm",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+      "items": [
+        { "name": "Butter Croissant", "price": 120 },
+        { "name": "Sourdough Loaf", "price": 250 },
+        { "name": "Cinnamon Roll", "price": 150 },
+        { "name": "Garlic Focaccia", "price": 180 },
+        { "name": "Chocolate Danish", "price": 140 },
+        { "name": "Multigrain Bread", "price": 200 }
+      ]
+    },
+    {
+      "name": "Falooda",
+      "slug": "falooda",
+      "tagline": "The crown jewels of our menu",
+      "image": "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&q=80",
+      "items": [
+        { "name": "Royal Falooda", "price": 170 },
+        { "name": "Dry Fruit Mixed", "price": 180 },
+        { "name": "Butterscotch", "price": 160 },
+        { "name": "Mango", "price": 160 },
+        { "name": "Strawberry", "price": 160 },
+        { "name": "Mini Falooda", "price": 140 }
+      ]
+    },
+    {
+      "name": "Cakes & Pastries",
+      "slug": "cakes",
+      "tagline": "Every slice tells a story",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
+      "items": [
+        { "name": "Red Velvet Slice", "price": 180 },
+        { "name": "Dutch Truffle", "price": 200 },
+        { "name": "Blueberry Cheesecake", "price": 220 },
+        { "name": "Tiramisu", "price": 250 },
+        { "name": "Éclair", "price": 120 },
+        { "name": "Fruit Tart", "price": 160 }
+      ]
+    },
+    {
+      "name": "Mojito",
+      "slug": "mojito",
+      "tagline": "Crafted to refresh, designed to linger",
+      "image": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=800&q=80",
+      "items": [
+        { "name": "Green Apple", "price": 100 },
+        { "name": "Blue Curacao", "price": 100 },
+        { "name": "Passion Fruit", "price": 100 },
+        { "name": "Virgin Mojito", "price": 100 }
+      ]
+    },
+    {
+      "name": "Lassi & Cocktails",
+      "slug": "lassi-cocktails",
+      "tagline": "Tradition, reimagined in every glass",
+      "image": "https://images.unsplash.com/photo-1626201850480-3021caa3a95b?w=800&q=80",
+      "items": [
+        { "name": "Mango Lassi", "price": 70 },
+        { "name": "Vanilla Lassi", "price": 70 },
+        { "name": "Strawberry Lassi", "price": 70 },
+        { "name": "Plain Lassi", "price": 70 },
+        { "name": "Pineapple Lime", "price": 50 },
+        { "name": "Strawberry Lime", "price": 50 },
+        { "name": "Grape Lime", "price": 50 },
+        { "name": "Lemon Masala Soda", "price": 50 }
+      ]
+    },
+    {
+      "name": "Tender Coconut",
+      "slug": "tender-coconut",
+      "tagline": "Nature's nectar, our way",
+      "image": "https://images.unsplash.com/photo-1544252890-c3e95e867532?w=800&q=80",
+      "items": [
+        { "name": "Special", "price": 130 },
+        { "name": "Strawberry", "price": 120 },
+        { "name": "Vanilla", "price": 120 },
+        { "name": "Chocolate", "price": 120 },
+        { "name": "Butterscotch", "price": 120 },
+        { "name": "Mango", "price": 120 }
+      ]
+    }
+  ]
+}

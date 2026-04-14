@@ -1,0 +1,33 @@
+---
+const items = ['CROISSANT', 'SOURDOUGH', 'FALOODA', 'MOJITO', 'CINNAMON ROLL', 'LASSI', 'CHEESECAKE', 'TENDER COCONUT', 'ÉCLAIR'];
+const separator = ' · ';
+const marqueeText = items.join(separator) + separator;
+---
+
+<div class="relative overflow-hidden py-6 md:py-8 border-y border-cream/15 bg-sage-dark" aria-hidden="true">
+  <div class="marquee-track flex whitespace-nowrap">
+    {[0, 1, 2].map(() => (
+      <span class="font-display text-3xl md:text-5xl lg:text-6xl italic text-cream/25 shrink-0 pr-4">
+        {marqueeText}
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee 40s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>

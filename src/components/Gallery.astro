@@ -1,0 +1,41 @@
+---
+const images = [
+  { src: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80', caption: 'Artisan Sourdough · 2024', span: 'row-span-2', aspect: 'aspect-[3/4]' },
+  { src: 'https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=600&q=80', caption: 'Fresh from the Oven · 2024', span: '', aspect: 'aspect-square' },
+  { src: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=600&q=80', caption: 'Royal Falooda · 2024', span: '', aspect: 'aspect-square' },
+  { src: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80', caption: 'Dutch Truffle Cake · 2024', span: 'row-span-2', aspect: 'aspect-[3/4]' },
+  { src: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=600&q=80', caption: 'Green Apple Mojito · 2024', span: '', aspect: 'aspect-square' },
+  { src: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80', caption: 'Butter Croissants · 2024', span: '', aspect: 'aspect-[4/3]' },
+];
+---
+
+<section id="gallery" class="relative py-24 md:py-40 px-6 md:px-12 bg-sage texture-grain" data-section="gallery">
+  <!-- Section Header -->
+  <div class="mb-16 md:mb-24">
+    <span class="text-label text-cream/60 mb-6 block">04 — Gallery</span>
+    <h2 class="text-display-lg italic">The Craft</h2>
+    <p class="text-script text-xl text-cream/50 mt-3">a peek inside our kitchen</p>
+  </div>
+
+  <!-- Collage Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+    {images.map((img) => (
+      <div class={`gallery-item group relative overflow-hidden rounded-sm cursor-pointer ${img.span}`}>
+        <img
+          src={img.src}
+          alt={img.caption}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
+        <!-- Hover overlay with caption -->
+        <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-all duration-500 flex items-end">
+          <span class="text-script text-lg text-cream/0 group-hover:text-cream/90 transition-all duration-500 p-4">
+            {img.caption}
+          </span>
+        </div>
+        <!-- Warm frame accent on hover -->
+        <div class="absolute inset-2 border border-gold/0 group-hover:border-gold/40 rounded-sm transition-all duration-700 pointer-events-none"></div>
+      </div>
+    ))}
+  </div>
+</section>

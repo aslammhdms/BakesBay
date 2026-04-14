@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- Bakes Bay wordmark -->
+  <text x="200" y="52" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="48" font-weight="300" letter-spacing="12" fill="#F5F1E8">BAKES BAY</text>
+  <line x1="60" y1="65" x2="340" y2="65" stroke="#8BB8B0" stroke-width="0.5"/>
+</svg>

@@ -1,0 +1,57 @@
+---
+---
+
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-dark texture-grain" data-section="hero">
+  <div class="w-full px-6 md:px-12 py-20 md:py-0">
+    <div class="flex flex-col md:flex-row items-center md:items-end gap-8 md:gap-0">
+      <!-- Left: Headline (60%) -->
+      <div class="w-full md:w-[60%] relative z-10">
+        <p class="text-script text-2xl md:text-3xl text-gold mb-4">Welcome to</p>
+        <div class="hero-headline">
+          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
+            <span class="text-price text-sm md:text-base shrink-0">01</span>
+            <h1 class="text-display-xl italic">Bake</h1>
+          </div>
+          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
+            <span class="text-price text-sm md:text-base shrink-0">02</span>
+            <h1 class="text-display-xl italic">Your</h1>
+          </div>
+          <div class="flex items-baseline gap-3 md:gap-6 overflow-hidden">
+            <span class="text-price text-sm md:text-base shrink-0">03</span>
+            <h1 class="text-display-xl italic">Day</h1>
+          </div>
+        </div>
+        <p class="text-script text-xl md:text-2xl text-cream/60 mt-6">freshly baked, made with love</p>
+      </div>
+
+      <!-- Right: Hero Image (40%) -->
+      <div class="w-full md:w-[40%] relative">
+        <div class="hero-image relative aspect-[3/4] max-h-[70vh] overflow-hidden rounded-sm">
+          <img
+            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80"
+            alt="Freshly baked artisanal bread with golden crust and flour dust"
+            class="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <!-- Warm gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/50 via-dark/10 to-transparent"></div>
+        </div>
+        <!-- Flour dust decoration -->
+        <div class="absolute -top-8 -right-8 w-32 h-32 bg-cream/5 rounded-full blur-2xl pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Ticker -->
+  <div class="absolute bottom-0 left-0 w-full border-t border-gold/20 py-4">
+    <div class="flex items-center justify-between px-6 md:px-12">
+      <p class="text-label text-gold/60 text-xs">
+        Est. Coimbatore — Maruthamalai Road — Handcrafted Daily
+      </p>
+      <p class="text-label text-gold/60 text-xs hidden md:block animate-pulse">
+        scroll to indulge ↓
+      </p>
+    </div>
+  </div>
+</section>

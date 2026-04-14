@@ -1,0 +1,40 @@
+---
+import MenuPanel from './MenuPanel.astro';
+import menuData from '../data/menu.json';
+---
+
+<section id="menu" class="relative py-24 md:py-0 bg-dark texture-grain" data-section="menu">
+  <!-- Section Intro -->
+  <div class="px-6 md:px-12 mb-12 md:mb-0 md:py-20">
+    <span class="text-label text-gold mb-6 block">03 — Menu</span>
+    <h2 class="text-display-lg italic mb-4">The Menu</h2>
+    <p class="text-script text-2xl text-gold/70">Thirty-six ways to bake your day.</p>
+  </div>
+
+  <!-- Horizontal Scroll Container (desktop) / Vertical Stack (mobile) -->
+  <div id="menu-scroll" class="relative">
+    <div id="menu-track" class="flex flex-col md:flex-row md:flex-nowrap">
+      {menuData.categories.map((category, i) => (
+        <MenuPanel
+          name={category.name}
+          tagline={category.tagline}
+          image={category.image}
+          items={category.items}
+          index={i}
+        />
+      ))}
+    </div>
+  </div>
+
+  <!-- Category Navigation Dots (desktop) -->
+  <div id="menu-dots" class="hidden md:flex justify-center gap-3 py-8">
+    {menuData.categories.map((cat, i) => (
+      <button
+        class="menu-dot w-2 h-2 rounded-full bg-cream/20 transition-all duration-500"
+        data-index={i}
+        aria-label={`Go to ${cat.name} category`}
+      >
+      </button>
+    ))}
+  </div>
+</section>
