@@ -7,9 +7,16 @@ interface Props {
 }
 
 const {
-  title = 'Bakes Bay | Dessert & Bakery Café, Coimbatore',
-  description = 'Handcrafted faloodas, mojitos, lassis & tender coconut creations at Bakes Bay — a vibrant dessert café on Maruthamalai Road, Coimbatore.',
+  title = 'Bakes Bay | Café, Bakery & Kitchen in Vadavalli, Coimbatore',
+  description = 'Coffee, pizza, pasta, Chinese, bakery, pastries, cakes and faloodas — Bakes Bay is a multi-cuisine café and bakery with four branches across Vadavalli and Vedapatti, Coimbatore.',
 } = Astro.props;
+
+const branches = [
+  { name: 'Maruthamalai Main Road', streetAddress: 'Maruthamalai Main Road, Vadavalli', postalCode: '641041' },
+  { name: 'Siruvani Road Junction', streetAddress: 'Siruvani Road Junction, Vadavalli', postalCode: '641041' },
+  { name: 'Grand Bei Market', streetAddress: 'Grand Bei Market, opp. JC Bus Station, Vadavalli', postalCode: '641041' },
+  { name: 'Thondamuthur Main Road', streetAddress: 'Thondamuthur Main Road, near PSG School, Vedapatti', postalCode: '641007' },
+];
 ---
 
 <!doctype html>
@@ -52,22 +59,49 @@ const {
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Restaurant",
+      "@type": ["Restaurant", "Bakery", "CafeOrCoffeeShop"],
       "name": "Bakes Bay",
       "description": description,
-      "servesCuisine": ["Desserts", "Beverages", "Falooda", "Mojito", "Lassi"],
-      "address": {
+      "servesCuisine": [
+        "Coffee", "Continental", "Italian", "Chinese",
+        "Bakery", "Pastries", "Cakes", "Desserts"
+      ],
+      "address": branches.map((b) => ({
         "@type": "PostalAddress",
-        "streetAddress": "Maruthamalai Road",
+        "streetAddress": b.streetAddress,
         "addressLocality": "Coimbatore",
         "addressRegion": "Tamil Nadu",
-        "postalCode": "641046",
+        "postalCode": b.postalCode,
         "addressCountry": "IN"
-      },
-      "telephone": "+918438459833",
+      })),
+      "telephone": ["+918438499833", "+919363687805"],
+      "email": "bakesbay.care@gmail.com",
       "url": "https://bakesbay.com",
       "priceRange": "₹₹",
-      "image": "/og-image.jpg"
+      "image": "/og-image.jpg",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "23:00"
+      },
+      "sameAs": [
+        "https://instagram.com/bakesbay",
+        "https://facebook.com/bakesbay",
+        "https://twitter.com/bakesbay"
+      ],
+      "department": branches.map((b) => ({
+        "@type": "Restaurant",
+        "name": `Bakes Bay — ${b.name}`,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": b.streetAddress,
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": b.postalCode,
+          "addressCountry": "IN"
+        }
+      }))
     })} />
   </head>
   <body>

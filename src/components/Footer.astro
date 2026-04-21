@@ -1,22 +1,61 @@
 ---
 ---
 
-<footer class="border-t border-cocoa/10 px-6 md:px-12 py-12 bg-cream">
-  <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-    <div class="flex items-center gap-4">
-      <a href="/" class="block hover:opacity-80 transition-opacity duration-300">
-        <img src="/logo.png" alt="Bakes Bay" class="h-12 w-auto" />
-      </a>
+<footer class="border-t border-cocoa/10 px-6 md:px-12 py-14 md:py-16 bg-cream">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-12">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href="/" class="block hover:opacity-80 transition-opacity duration-300 mb-4">
+          <img src="/logo.png" alt="Bakes Bay" class="h-16 w-auto" />
+        </a>
+        <p class="text-script text-base text-caramel/70">Café · Bakery · Kitchen</p>
+        <p class="text-sm text-espresso/50 mt-2">Four corners of Coimbatore</p>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <p class="text-label text-sage mb-4">Explore</p>
+        <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+          <a href="#about" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Our Story</a>
+          <a href="#craft" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Four Corners</a>
+          <a href="#menu" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Menu</a>
+          <a href="#gallery" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Gallery</a>
+          <a href="#celebrations" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Celebrations</a>
+          <a href="#visit" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Visit</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="text-label text-sage mb-4">Contact</p>
+        <div class="flex flex-col gap-2">
+          <a href="tel:+918438499833" class="text-sm text-cocoa/60 hover:text-sage transition-colors">+91 8438 499 833</a>
+          <a href="tel:+919363687805" class="text-sm text-cocoa/60 hover:text-sage transition-colors">+91 9363 687 805</a>
+          <a href="mailto:bakesbay.care@gmail.com" class="text-sm text-cocoa/60 hover:text-sage transition-colors break-all">bakesbay.care@gmail.com</a>
+          <a href="https://wa.me/918438499833" target="_blank" rel="noopener" class="text-sm text-cocoa/60 hover:text-sage transition-colors">WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Follow -->
+      <div>
+        <p class="text-label text-sage mb-4">Follow</p>
+        <div class="flex flex-col gap-2">
+          <a href="https://instagram.com/bakesbay" target="_blank" rel="noopener" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Instagram</a>
+          <a href="https://facebook.com/bakesbay" target="_blank" rel="noopener" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Facebook</a>
+          <a href="https://twitter.com/bakesbay" target="_blank" rel="noopener" class="text-sm text-cocoa/60 hover:text-sage transition-colors">Twitter</a>
+        </div>
+        <p class="text-xs text-cocoa/40 mt-4">Open everyday<br />11am — 11pm</p>
+      </div>
     </div>
-    <nav class="flex flex-wrap gap-x-8 gap-y-2" aria-label="Footer navigation">
-      <a href="#about" class="text-label text-cocoa/40 hover:text-sage transition-colors text-xs">About</a>
-      <a href="#menu" class="text-label text-cocoa/40 hover:text-sage transition-colors text-xs">Menu</a>
-      <a href="#gallery" class="text-label text-cocoa/40 hover:text-sage transition-colors text-xs">Gallery</a>
-      <a href="#visit" class="text-label text-cocoa/40 hover:text-sage transition-colors text-xs">Visit</a>
-      <a href="#contact" class="text-label text-cocoa/40 hover:text-sage transition-colors text-xs">Contact</a>
-    </nav>
-    <p class="text-xs text-cocoa/30">
-      <span class="text-script text-sm text-caramel/60">Handcrafted in Coimbatore</span> · © 2026 Bakes Bay
-    </p>
+
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 border-t border-caramel/15">
+      <p class="text-xs text-cocoa/30">
+        © 2026 Bakes Bay · <span class="text-script text-sm text-caramel/60">Handcrafted in Coimbatore</span>
+      </p>
+      <p class="text-xs text-cocoa/30">
+        Maruthamalai Road · Siruvani Road · Grand Bei · Thondamuthur
+      </p>
+    </div>
   </div>
 </footer>

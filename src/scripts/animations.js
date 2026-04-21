@@ -28,8 +28,7 @@ export function initAnimations() {
     initHeroCarousel();
     animateAbout();
     animateCraft();
-    animateMenuScroll();
-    initMenuTiles();
+    animateMenu();
     animateGallery();
     animateCelebrations();
     animateTimeline();
@@ -108,35 +107,27 @@ function animateAbout() {
   });
 }
 
-function animateMenuScroll() {
-  const menuSection = document.getElementById('menu-scroll');
-  const track = document.getElementById('menu-track');
-  if (!menuSection || !track || window.innerWidth < 768) return;
+function animateMenu() {
+  const section = document.getElementById('menu');
+  if (!section) return;
 
-  const panels = track.querySelectorAll('.menu-panel');
-  const totalWidth = panels.length * window.innerWidth;
-  gsap.set(track, { width: totalWidth });
-
-  gsap.to(track, {
-    x: -(totalWidth - window.innerWidth), ease: 'none',
-    scrollTrigger: {
-      trigger: menuSection, start: 'top top', end: `+=${totalWidth}`,
-      pin: true, scrub: 1, anticipatePin: 1,
-      onUpdate: (self) => {
-        const dots = document.querySelectorAll('.menu-dot');
-        const activeIndex = Math.round(self.progress * (panels.length - 1));
-        dots.forEach((dot, i) => {
-          dot.style.backgroundColor = i === activeIndex ? '#C8935B' : 'rgba(200,147,91,0.2)';
-          dot.style.width = i === activeIndex ? '2rem' : '0.625rem';
-        });
-      },
-    },
+  gsap.from(section.querySelectorAll('.menu-tile'), {
+    y: 30, opacity: 0, duration: 0.7, stagger: 0.06, ease: 'power2.out',
+    scrollTrigger: { trigger: section, start: 'top 75%' },
   });
 
-  panels.forEach((panel) => {
-    gsap.from(panel.querySelectorAll('.menu-item'), {
-      x: 20, opacity: 0, duration: 0.6, stagger: 0.06, ease: 'power2.out',
-      scrollTrigger: { trigger: panel, start: 'left 80%', toggleActions: 'play none none none' },
+  section.querySelectorAll('.menu-theme').forEach((theme) => {
+    const header = theme.querySelector('h3, .text-label');
+    const body = theme.querySelectorAll('.menu-group, .menu-theme > div > div > div');
+
+    gsap.from(theme.querySelectorAll('.menu-theme > div > div > *'), {
+      y: 30, opacity: 0, duration: 0.7, stagger: 0.05, ease: 'power2.out',
+      scrollTrigger: { trigger: theme, start: 'top 80%' },
+    });
+
+    gsap.from(theme.querySelectorAll('.menu-item'), {
+      x: 10, opacity: 0, duration: 0.4, stagger: 0.03, ease: 'power2.out',
+      scrollTrigger: { trigger: theme, start: 'top 70%' },
     });
   });
 }
@@ -252,32 +243,6 @@ function animateCraft() {
   gsap.from(section.querySelectorAll('.craft-card'), {
     y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out',
     scrollTrigger: { trigger: section, start: 'top 65%' },
-  });
-}
-
-function initMenuTiles() {
-  const tiles = document.querySelectorAll('.menu-tile');
-  const menuScroll = document.getElementById('menu-scroll');
-  if (!tiles.length || !menuScroll) return;
-
-  tiles.forEach((tile) => {
-    tile.addEventListener('click', () => {
-      const index = Number(tile.dataset.tileIndex);
-      if (window.innerWidth < 768) {
-        const panel = document.querySelectorAll('.menu-panel')[index];
-        panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-      const st = ScrollTrigger.getAll().find((t) => t.trigger === menuScroll);
-      if (!st) {
-        menuScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-      const panels = document.querySelectorAll('.menu-panel');
-      const progress = panels.length > 1 ? index / (panels.length - 1) : 0;
-      const targetScroll = st.start + (st.end - st.start) * progress;
-      window.__lenis?.scrollTo(targetScroll, { duration: 1.2 });
-    });
   });
 }
 

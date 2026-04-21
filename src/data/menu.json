@@ -1,59 +1,325 @@
 {
-  "categories": [
+  "themes": [
     {
-      "name": "Falooda",
-      "slug": "falooda",
-      "tagline": "The crown jewels of our menu",
-      "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=800&auto=format&q=80",
-      "items": [
-        { "name": "Royal Falooda", "price": 170 },
-        { "name": "Dry Fruit Mixed", "price": 180 },
-        { "name": "Butterscotch", "price": 160 },
-        { "name": "Mango", "price": 160 },
-        { "name": "Strawberry", "price": 160 },
-        { "name": "Mini Falooda", "price": 140 }
+      "slug": "coffee",
+      "name": "Coffee",
+      "tagline": "brewed slow, served warm",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Hot Coffee",
+          "items": [
+            { "name": "Espresso", "price": 50 },
+            { "name": "Americano", "price": 60 },
+            { "name": "Cappuccino", "price": 100 },
+            { "name": "Cafe Latte", "price": 110 },
+            { "name": "Cafe Mocha", "price": 120 },
+            { "name": "Caramel Hot Chocolate", "price": 130 },
+            { "name": "Cafe Macchiato", "price": 140 }
+          ]
+        },
+        {
+          "name": "Cold Coffee",
+          "items": [
+            { "name": "Classic Iced Latte", "price": 120 },
+            { "name": "Iced Americano", "price": 120 },
+            { "name": "Caramel Iced Latte", "price": 130 },
+            { "name": "Cold Brew", "price": 130 }
+          ]
+        },
+        {
+          "name": "Ice-Cream Blended Frappés",
+          "items": [
+            { "name": "Cafe Frappé", "price": 150 },
+            { "name": "Crunchy Caramello", "price": 160 },
+            { "name": "Choco Frappé", "price": 160 },
+            { "name": "Caramel Frappé", "price": 160 }
+          ]
+        }
       ]
     },
     {
-      "name": "Mojito",
-      "slug": "mojito",
-      "tagline": "Crafted to refresh, designed to linger",
-      "image": "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=800&auto=format&q=80",
-      "items": [
-        { "name": "Green Apple", "price": 100 },
-        { "name": "Blue Curacao", "price": 100 },
-        { "name": "Passion Fruit", "price": 100 },
-        { "name": "Virgin Mojito", "price": 100 }
+      "slug": "cafe-starters",
+      "name": "Café Starters",
+      "tagline": "for when you walked in hungry",
+      "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Starters",
+          "items": [
+            { "name": "Garlic Bread", "price": 110 },
+            { "name": "Cheese Garlic Bread", "price": 140 },
+            { "name": "Crispy Chicken Finger", "price": 190 },
+            { "name": "Crispy Paneer Finger", "price": 180 },
+            { "name": "Potato Wedges", "price": 120 },
+            { "name": "Classic Salted Fries", "price": 120 },
+            { "name": "Peri Peri Fries", "price": 130 },
+            { "name": "Chicken Pop Corn", "price": 190 },
+            { "name": "Chicken Loaded Fries", "price": 230 },
+            { "name": "Gobi Manchurian Dry", "price": 180 },
+            { "name": "Gobi Chilli", "price": 150 },
+            { "name": "Paneer Chilli", "price": 170 },
+            { "name": "Egg Manchurian", "price": 170 }
+          ]
+        },
+        {
+          "name": "Soups",
+          "items": [
+            { "name": "Tomato Basil Soup", "price": 120 },
+            { "name": "Mushroom & Parmesan Soup", "price": 180 },
+            { "name": "Broccoli Creamy Soup", "price": 160 },
+            { "name": "Leek Chicken Soup", "price": 180 },
+            { "name": "Spinach Mushroom Soup", "price": 160 },
+            { "name": "Chicken Manchow Soup", "price": 200 },
+            { "name": "Veg Manchow Soup", "price": 170 },
+            { "name": "Chicken Hot & Sour Soup", "price": 200 },
+            { "name": "Veg Hot & Sour Soup", "price": 170 }
+          ]
+        },
+        {
+          "name": "Salads",
+          "items": [
+            { "name": "Caesar Salad", "price": 150 },
+            { "name": "Greek Salad", "price": 160 },
+            { "name": "Potato Mustard Salad", "price": 150 },
+            { "name": "Caesar Salad Non-Veg", "price": 190 },
+            { "name": "BBQ Chicken Salad", "price": 180 },
+            { "name": "Chicken Salami Salad", "price": 190 },
+            { "name": "Roasted Chicken Corn Salad", "price": 200 }
+          ]
+        },
+        {
+          "name": "Wings & Momos",
+          "items": [
+            { "name": "Veg Momos", "price": 130 },
+            { "name": "Peri Peri Chicken Momos", "price": 160 },
+            { "name": "Schezwan Chicken Momos", "price": 170 },
+            { "name": "BBQ Wings", "price": 200 },
+            { "name": "Peri Peri Wings", "price": 200 }
+          ]
+        },
+        {
+          "name": "Bakes Bay Special",
+          "items": [
+            { "name": "Dragon Chicken", "price": 300 },
+            { "name": "Spaghetti Aglio Olio", "price": 300 },
+            { "name": "Spaghetti Bolognese Pasta", "price": 300 }
+          ]
+        }
       ]
     },
     {
-      "name": "Lassi & Cocktails",
-      "slug": "lassi-cocktails",
-      "tagline": "Tradition, reimagined in every glass",
-      "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=800&auto=format&q=80",
-      "items": [
-        { "name": "Mango Lassi", "price": 70 },
-        { "name": "Vanilla Lassi", "price": 70 },
-        { "name": "Strawberry Lassi", "price": 70 },
-        { "name": "Plain Lassi", "price": 70 },
-        { "name": "Pineapple Lime", "price": 50 },
-        { "name": "Strawberry Lime", "price": 50 },
-        { "name": "Grape Lime", "price": 50 },
-        { "name": "Lemon Masala Soda", "price": 50 }
+      "slug": "continental",
+      "name": "Continental",
+      "tagline": "pasta, pizza feelings, and a plate worth your evening",
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Sandwiches",
+          "items": [
+            { "name": "Classic Veg", "price": 120 },
+            { "name": "Egg Sandwich", "price": 130 },
+            { "name": "Cheesy Mushroom", "price": 140 },
+            { "name": "Traditional Pesto Veg", "price": 150 },
+            { "name": "Veg Club", "price": 160 },
+            { "name": "Spinach & Corn", "price": 160 },
+            { "name": "Paneer Tikka Sandwich", "price": 170 },
+            { "name": "Peri Peri Paneer Sandwich", "price": 180 },
+            { "name": "Peri Peri Chicken", "price": 190 },
+            { "name": "Chicken Tikka Sandwich", "price": 200 },
+            { "name": "Roasted Chicken", "price": 200 },
+            { "name": "Chicken Club", "price": 220 },
+            { "name": "Smoke Chicken Sandwich", "price": 220 }
+          ]
+        },
+        {
+          "name": "Burgers",
+          "items": [
+            { "name": "Classic Veg Burger", "price": 140 },
+            { "name": "BBQ Veg Burger", "price": 160 },
+            { "name": "Classic Chicken Burger", "price": 180 },
+            { "name": "BBQ Paneer Burger", "price": 200 },
+            { "name": "Chicken Zinger Burger", "price": 220 },
+            { "name": "BBQ Chicken Burger", "price": 240 },
+            { "name": "Chicken Cheese Omelet Burger", "price": 250 }
+          ]
+        },
+        {
+          "name": "Spaghetti",
+          "items": [
+            { "name": "Alfredo Spaghetti Veg", "price": 230 },
+            { "name": "Arrabbiata Spaghetti Veg", "price": 230 },
+            { "name": "Red Pesto Spaghetti Veg", "price": 230 },
+            { "name": "Alfredo Spaghetti Non-Veg", "price": 280 },
+            { "name": "Arrabbiata Spaghetti Non-Veg", "price": 280 },
+            { "name": "Red Pesto Spaghetti Non-Veg", "price": 280 }
+          ]
+        },
+        {
+          "name": "Pasta",
+          "items": [
+            { "name": "Penne Alfredo Veg", "price": 260 },
+            { "name": "Red Pesto Penne Veg", "price": 260 },
+            { "name": "Traditional Pesto Pasta Veg", "price": 260 },
+            { "name": "Penne Arrabiata Veg", "price": 260 },
+            { "name": "Penne Alfredo Non-Veg", "price": 300 },
+            { "name": "Red Pesto Penne Non-Veg", "price": 300 },
+            { "name": "Traditional Pesto Pasta Non-Veg", "price": 300 },
+            { "name": "Penne Arrabiata Non-Veg", "price": 300 }
+          ]
+        }
       ]
     },
     {
-      "name": "Tender Coconut",
-      "slug": "tender-coconut",
-      "tagline": "Nature's nectar, our way",
-      "image": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=800&auto=format&q=80",
-      "items": [
-        { "name": "Special", "price": 130 },
-        { "name": "Strawberry", "price": 120 },
-        { "name": "Vanilla", "price": 120 },
-        { "name": "Chocolate", "price": 120 },
-        { "name": "Butterscotch", "price": 120 },
-        { "name": "Mango", "price": 120 }
+      "slug": "pizza",
+      "name": "Pizza",
+      "tagline": "nine-inch and twelve-inch, baked to order",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Veg",
+          "items": [
+            { "name": "Margheritta", "priceSmall": 250, "price": 280 },
+            { "name": "Paneer Tikka", "priceSmall": 270, "price": 300 },
+            { "name": "Hawaiian", "priceSmall": 270, "price": 300 },
+            { "name": "Farm House", "priceSmall": 270, "price": 300 },
+            { "name": "Primavera", "price": 290 },
+            { "name": "Mushroom with Dry Tomato", "price": 290 },
+            { "name": "Four Cheese Pizza", "price": 280 }
+          ]
+        },
+        {
+          "name": "Non-Veg",
+          "items": [
+            { "name": "Salami Chicken", "priceSmall": 300, "price": 350 },
+            { "name": "Chicken Tikka", "priceSmall": 300, "price": 350 },
+            { "name": "BBQ Chicken", "price": 350 },
+            { "name": "Peri Peri Chicken", "price": 350 },
+            { "name": "Mexican Chicken", "price": 360 },
+            { "name": "Smoke Chicken Pizza", "price": 390 },
+            { "name": "Pesto Chicken Pizza", "price": 390 }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "chinese",
+      "name": "Chinese",
+      "tagline": "rice, noodles, and a little chilli heat",
+      "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Rice & Noodles",
+          "items": [
+            { "name": "Veg Fried Rice", "price": 160 },
+            { "name": "Egg Fried Rice", "price": 180 },
+            { "name": "Egg Schezwan Fried Rice", "price": 200 },
+            { "name": "Veg Schezwan Fried Rice", "price": 200 },
+            { "name": "Chicken Fried Rice", "price": 230 },
+            { "name": "Chicken Schezwan Fried Rice", "price": 250 },
+            { "name": "Egg Noodles", "price": 180 },
+            { "name": "Veg Schezwan Noodles", "price": 180 },
+            { "name": "Veg Hakka Noodles", "price": 190 },
+            { "name": "Egg Schezwan Noodles", "price": 200 },
+            { "name": "Chicken Hakka Noodles", "price": 230 },
+            { "name": "Chicken Schezwan Noodles", "price": 250 }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "bakery",
+      "name": "Bakery",
+      "tagline": "fresh out of the oven by sunrise",
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=85",
+      "descriptive": true,
+      "description": "Our bread comes out of the oven before most of the city is awake. Sourdough with a crackling crust, soft milk breads, stuffed buns, and a rotating line of loaves that change with the week. Whatever makes it to the counter each morning was mixed by hand the night before — no shortcuts, no mixes."
+    },
+    {
+      "slug": "pastries",
+      "name": "Pastries",
+      "tagline": "small pockets of joy",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=85",
+      "descriptive": true,
+      "description": "The pastry case is where we keep our small indulgences — hand-laminated croissants that shatter at the first bite, danishes with roasted fruit, éclairs, brownies, cookies, and the occasional weekend experiment from our kitchen. Pair one with a coffee and stay a while."
+    },
+    {
+      "slug": "cakes",
+      "name": "Cakes",
+      "tagline": "for every celebration worth baking",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=85",
+      "descriptive": true,
+      "description": "Every cake at Bakes Bay is baked to order. Classic sponges, fudge-layered chocolates, tiered celebration cakes, custom designs for birthdays, anniversaries, and every quiet occasion worth marking. Share your idea — theme, flavour, dedication — and we'll bake the rest. WhatsApp us to place your order."
+    },
+    {
+      "slug": "desserts",
+      "name": "Desserts",
+      "tagline": "the sweet ending — or the whole reason you came",
+      "image": "https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Falooda",
+          "items": [
+            { "name": "Mini Falooda", "price": 150 },
+            { "name": "Butterscotch Falooda", "price": 160 },
+            { "name": "Strawberry Falooda", "price": 160 },
+            { "name": "Royal Falooda", "price": 180 },
+            { "name": "Dry Fruit Mixed Falooda", "price": 190 }
+          ]
+        },
+        {
+          "name": "Thick Shakes",
+          "items": [
+            { "name": "Apple Thick Shake", "price": 130 },
+            { "name": "Mango Thick Shake", "price": 130 },
+            { "name": "Chocolate Thick Shake", "price": 140 },
+            { "name": "Strawberry Thick Shake", "price": 140 },
+            { "name": "Avocado Thick Shake", "price": 140 },
+            { "name": "Kit Kat Thick Shake", "price": 150 },
+            { "name": "Oreo Thick Shake", "price": 150 },
+            { "name": "Brownie Thick Shake", "price": 180 }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "beverages",
+      "name": "Beverages",
+      "tagline": "juiced, shaken, stirred",
+      "image": "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=800&auto=format&fit=crop&q=85",
+      "groups": [
+        {
+          "name": "Fresh Juice",
+          "items": [
+            { "name": "Water Melon", "price": 70 },
+            { "name": "Musk Melon", "price": 70 },
+            { "name": "Pineapple", "price": 70 },
+            { "name": "Orange", "price": 80 },
+            { "name": "Apple", "price": 80 },
+            { "name": "Grape", "price": 80 },
+            { "name": "Mango", "price": 80 },
+            { "name": "Anaar", "price": 90 },
+            { "name": "Avocado", "price": 90 }
+          ]
+        },
+        {
+          "name": "Mojitos",
+          "items": [
+            { "name": "Virgin Mojito", "price": 100 },
+            { "name": "Green Apple Mojito", "price": 100 },
+            { "name": "Passion Fruit Mojito", "price": 100 },
+            { "name": "Blue Curacao Mojito", "price": 100 }
+          ]
+        },
+        {
+          "name": "Smoothies",
+          "items": [
+            { "name": "Blue Currant", "price": 140 },
+            { "name": "Black Currant", "price": 140 },
+            { "name": "Red Velvet", "price": 140 },
+            { "name": "Avocado", "price": 140 }
+          ]
+        }
       ]
     }
   ]

@@ -4,37 +4,37 @@ import Wheat from './illustrations/Wheat.astro';
 import Whisk from './illustrations/Whisk.astro';
 import Steam from './illustrations/Steam.astro';
 
-const methods = [
+const pillars = [
   {
     roman: 'I',
-    title: 'Slow Fermentation',
-    detail: '72-hour ferment',
-    body: 'We wait. Our sourdough starter is older than most of our staff, and every loaf earns its crust through patience, not shortcuts.',
+    title: 'The Bakery',
+    detail: 'sourdough, breads, laminations',
+    body: 'Our bread is mixed by hand the night before and stretched into shape at first light. Laminated pastries get 27 folds and a block of cultured butter. Everything comes out of the oven before most of the city is awake.',
     icon: 'wheat',
     tilt: 'tilt-left',
   },
   {
     roman: 'II',
-    title: 'Hand-Laminated',
-    detail: '27 folds, butter & flour',
-    body: 'Every croissant begins with a block of cultured butter and a dough folded by hand. The shatter in your first bite is the sound of patience.',
-    icon: 'whisk',
+    title: 'The Coffee',
+    detail: 'espresso, filters, cold brew',
+    body: 'Single-origin beans, pulled slow on the bar, or steeped overnight for the cold brew. Our baristas remember your regular. Bring a book, stay a while.',
+    icon: 'steam',
     tilt: 'tilt-right',
   },
   {
     roman: 'III',
-    title: 'Stone-Baked',
-    detail: '240°C, open hearth',
-    body: 'Our ovens are seasoned, radiant, and opinionated. Direct heat from stone gives our breads their signature crumb and crackling crust.',
+    title: 'The Kitchen',
+    detail: 'pizzas, pastas, Chinese, continental',
+    body: 'Stone-baked pizzas, Alfredo and pesto pastas made fresh to order, Chinese wok classics with real heat, and café-style sandwiches that walked out of our toaster. Weekends run long here.',
     icon: 'oven',
     tilt: 'tilt-slight',
   },
   {
     roman: 'IV',
-    title: 'Small Batches',
-    detail: 'made fresh, daily',
-    body: 'Nothing sits overnight. Faloodas are layered on the hour, mojitos muddled to order, and pastries finished in small trays so the last one tastes like the first.',
-    icon: 'steam',
+    title: 'The Desserts',
+    detail: 'faloodas, shakes, cakes to order',
+    body: 'The Royal Falooda is a tower of rose, vermicelli and hand-churned ice cream. Thick shakes layered by the minute. And every cake is baked to order — share the idea, we bake the rest.',
+    icon: 'whisk',
     tilt: 'tilt-right',
   },
 ];
@@ -46,29 +46,29 @@ const methods = [
   </div>
 
   <div class="mb-16 md:mb-24">
-    <span class="text-label text-sage mb-6 block">03 — How We Bake</span>
-    <h2 class="text-display-lg text-cocoa">The Craft</h2>
-    <p class="text-script text-xl md:text-2xl text-caramel mt-3">four habits, four decades of bakery instinct</p>
+    <span class="text-label text-sage mb-6 block">03 — What We Do</span>
+    <h2 class="text-display-lg text-cocoa">Four Corners</h2>
+    <p class="text-script text-xl md:text-2xl text-caramel mt-3">one kitchen, four ways to walk in hungry</p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-    {methods.map((m) => (
-      <article class={`craft-card group relative bg-ivory p-8 md:p-10 rounded-sm shadow-md hover:shadow-xl transition-shadow duration-500 ${m.tilt} hover:rotate-0`}>
+    {pillars.map((p) => (
+      <article class={`craft-card group relative bg-ivory p-8 md:p-10 rounded-sm shadow-md hover:shadow-xl transition-shadow duration-500 ${p.tilt} hover:rotate-0`}>
         <div class="flex items-start justify-between mb-6">
-          <span class="text-label text-caramel/60">{m.roman}</span>
+          <span class="text-label text-caramel/60">{p.roman}</span>
           <div class="opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-            {m.icon === 'wheat' && <Wheat size="w-6 h-10" />}
-            {m.icon === 'whisk' && <Whisk size="w-8 h-16" />}
-            {m.icon === 'oven' && <Oven size="w-10 h-10" />}
-            {m.icon === 'steam' && <Steam size="w-8 h-12" />}
+            {p.icon === 'wheat' && <Wheat size="w-6 h-10" />}
+            {p.icon === 'whisk' && <Whisk size="w-8 h-16" />}
+            {p.icon === 'oven' && <Oven size="w-10 h-10" />}
+            {p.icon === 'steam' && <Steam size="w-8 h-12" />}
           </div>
         </div>
 
         <h3 class="font-display text-3xl md:text-4xl italic font-semibold text-cocoa mb-3">
-          {m.title}
+          {p.title}
         </h3>
-        <p class="text-script text-lg text-caramel mb-6">{m.detail}</p>
-        <p class="text-espresso/70 leading-relaxed">{m.body}</p>
+        <p class="text-script text-lg text-caramel mb-6">{p.detail}</p>
+        <p class="text-espresso/70 leading-relaxed">{p.body}</p>
       </article>
     ))}
   </div>
