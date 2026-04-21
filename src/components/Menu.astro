@@ -12,9 +12,35 @@ const categoryStyles = [
 
 <section id="menu" class="relative" data-section="menu">
   <div class="px-6 md:px-12 py-20 bg-cream texture-paper">
-    <span class="text-label text-sage mb-6 block">03 — Menu</span>
+    <span class="text-label text-sage mb-6 block">04 — Menu</span>
     <h2 class="text-display-lg text-cocoa mb-4">The Menu</h2>
     <p class="text-script text-2xl text-caramel">Twenty-four ways to bake your day</p>
+
+    <!-- Category preview tiles -->
+    <div class="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 max-w-5xl">
+      {menuData.categories.map((cat, i) => (
+        <button
+          class="menu-tile group relative overflow-hidden rounded-sm aspect-[4/3] text-left shadow-md hover:shadow-xl transition-all duration-500"
+          data-tile-index={i}
+          aria-label={`Jump to ${cat.name}`}
+        >
+          <img
+            src={cat.image}
+            alt={cat.name}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-cocoa/80 via-cocoa/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+            <p class="text-label text-cream/70 mb-1">0{i + 1}</p>
+            <p class="font-display text-xl md:text-2xl italic font-semibold text-cream leading-tight">
+              {cat.name}
+            </p>
+            <p class="text-script text-sm text-butter/90 mt-1 line-clamp-1">{cat.tagline}</p>
+          </div>
+        </button>
+      ))}
+    </div>
   </div>
 
   <div id="menu-scroll" class="relative">

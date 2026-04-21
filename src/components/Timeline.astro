@@ -1,0 +1,49 @@
+---
+const milestones = [
+  { year: '2020', title: 'Founded', body: 'A small kitchen on Maruthamalai Road, two ovens, one dream.' },
+  { year: '2021', title: 'The Falooda', body: 'Our Royal Falooda recipe is locked in after 40 iterations.' },
+  { year: '2022', title: 'Celebrations', body: 'Custom cakes and curated dessert spreads join the menu.' },
+  { year: '2023', title: 'Daily Laminations', body: 'Croissants and danishes become a morning ritual.' },
+  { year: '2024', title: 'Menu Expansion', body: 'Mojitos, lassis and tender coconut creations arrive.' },
+  { year: '2025', title: 'A Coimbatore Favourite', body: 'Thousands of faloodas later, the bay is full.' },
+];
+---
+
+<section id="timeline" class="relative py-24 md:py-40 px-6 md:px-12 bg-ivory texture-paper overflow-hidden" data-section="timeline">
+  <div class="mb-16 md:mb-24 max-w-3xl">
+    <span class="text-label text-sage mb-6 block">07 — Our Journey</span>
+    <h2 class="text-display-lg text-cocoa">Since 2020</h2>
+    <p class="text-script text-xl md:text-2xl text-caramel mt-3">a few chapters, many mornings</p>
+  </div>
+
+  <!-- Desktop: horizontal rail -->
+  <div class="hidden md:block relative max-w-6xl mx-auto">
+    <div class="timeline-rail absolute top-20 left-0 right-0 h-px bg-caramel/30"></div>
+
+    <div class="grid grid-cols-6 gap-4 relative">
+      {milestones.map((m, i) => (
+        <div class={`timeline-node relative flex flex-col ${i % 2 === 0 ? 'items-start' : 'items-start mt-12'}`}>
+          <p class="font-display text-3xl italic font-bold text-caramel mb-4">{m.year}</p>
+          <div class="w-3 h-3 rounded-full bg-sage ring-4 ring-ivory mb-6"></div>
+          <h3 class="font-display text-xl italic font-semibold text-cocoa mb-2">{m.title}</h3>
+          <p class="text-sm text-espresso/60 leading-relaxed">{m.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Mobile: vertical rail -->
+  <div class="md:hidden relative">
+    <div class="absolute left-3 top-2 bottom-2 w-px bg-caramel/30"></div>
+    <ol class="space-y-10">
+      {milestones.map((m) => (
+        <li class="timeline-node relative pl-12">
+          <div class="absolute left-[6px] top-2 w-3 h-3 rounded-full bg-sage ring-4 ring-ivory"></div>
+          <p class="font-display text-2xl italic font-bold text-caramel mb-1">{m.year}</p>
+          <h3 class="font-display text-lg italic font-semibold text-cocoa mb-1">{m.title}</h3>
+          <p class="text-sm text-espresso/60 leading-relaxed">{m.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

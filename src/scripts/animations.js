@@ -25,10 +25,14 @@ export function initAnimations() {
 
   animatePreloader(() => {
     animateHero();
+    initHeroCarousel();
     animateAbout();
+    animateCraft();
     animateMenuScroll();
+    initMenuTiles();
     animateGallery();
     animateCelebrations();
+    animateTimeline();
     animateVisit();
     animateContact();
   });
@@ -67,10 +71,15 @@ function animatePreloader(onComplete) {
 }
 
 function animateHero() {
+  const kicker = document.querySelector('.hero-kicker');
+  if (kicker) {
+    gsap.from(kicker, { opacity: 0, y: 10, duration: 0.7, ease: 'power2.out', delay: 0.1 });
+  }
+
   gsap.utils.toArray('.hero-headline > div').forEach((line, i) => {
     const text = line.querySelector('h1');
     if (text) {
-      gsap.from(text, { yPercent: 120, duration: 1, ease: 'power3.out', delay: 0.2 + i * 0.15 });
+      gsap.from(text, { yPercent: 120, duration: 1, ease: 'power3.out', delay: 0.3 + i * 0.15 });
     }
   });
 
@@ -170,4 +179,127 @@ function animateContact() {
     y: 30, opacity: 0, duration: 0.8, stagger: 0.08, ease: 'power2.out',
     scrollTrigger: { trigger: section, start: 'top 70%' },
   });
+}
+
+function initHeroCarousel() {
+  const carousel = document.getElementById('hero-carousel');
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll('.hero-slide');
+  const dots = carousel.querySelectorAll('.hero-dot');
+  const captionEl = document.getElementById('hero-caption');
+  const captionsNode = document.getElementById('hero-captions');
+  let captions = [];
+  try { captions = JSON.parse(captionsNode?.textContent || '[]'); } catch (e) {}
+
+  if (slides.length < 2) return;
+
+  let current = 0;
+  const advance = () => {
+    const next = (current + 1) % slides.length;
+    slides[current].classList.remove('is-active');
+    slides[next].classList.add('is-active');
+    dots.forEach((d, i) => {
+      d.classList.toggle('w-6', i === next);
+      d.classList.toggle('bg-cream', i === next);
+      d.classList.toggle('bg-cream/40', i !== next);
+    });
+    if (captionEl && captions[next]) {
+      captionEl.style.opacity = '0';
+      setTimeout(() => {
+        captionEl.textContent = captions[next];
+        captionEl.style.opacity = '1';
+      }, 300);
+    }
+    current = next;
+  };
+
+  const interval = setInterval(advance, 6000);
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const target = Number(dot.dataset.index);
+      if (target === current) return;
+      slides[current].classList.remove('is-active');
+      slides[target].classList.add('is-active');
+      dots.forEach((d, i) => {
+        d.classList.toggle('w-6', i === target);
+        d.classList.toggle('bg-cream', i === target);
+        d.classList.toggle('bg-cream/40', i !== target);
+      });
+      if (captionEl && captions[target]) {
+        captionEl.textContent = captions[target];
+      }
+      current = target;
+    });
+  });
+
+  window.addEventListener('beforeunload', () => clearInterval(interval));
+}
+
+function animateCraft() {
+  const section = document.getElementById('craft');
+  if (!section) return;
+
+  const header = section.querySelector('.mb-16, .mb-24') || section.firstElementChild;
+  if (header) {
+    gsap.from(header.children, {
+      y: 30, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power2.out',
+      scrollTrigger: { trigger: section, start: 'top 75%' },
+    });
+  }
+
+  gsap.from(section.querySelectorAll('.craft-card'), {
+    y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out',
+    scrollTrigger: { trigger: section, start: 'top 65%' },
+  });
+}
+
+function initMenuTiles() {
+  const tiles = document.querySelectorAll('.menu-tile');
+  const menuScroll = document.getElementById('menu-scroll');
+  if (!tiles.length || !menuScroll) return;
+
+  tiles.forEach((tile) => {
+    tile.addEventListener('click', () => {
+      const index = Number(tile.dataset.tileIndex);
+      if (window.innerWidth < 768) {
+        const panel = document.querySelectorAll('.menu-panel')[index];
+        panel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      const st = ScrollTrigger.getAll().find((t) => t.trigger === menuScroll);
+      if (!st) {
+        menuScroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      const panels = document.querySelectorAll('.menu-panel');
+      const progress = panels.length > 1 ? index / (panels.length - 1) : 0;
+      const targetScroll = st.start + (st.end - st.start) * progress;
+      window.__lenis?.scrollTo(targetScroll, { duration: 1.2 });
+    });
+  });
+}
+
+function animateTimeline() {
+  const section = document.getElementById('timeline');
+  if (!section) return;
+
+  gsap.from(section.querySelectorAll('.text-label, h2, h2 + p'), {
+    y: 30, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power2.out',
+    scrollTrigger: { trigger: section, start: 'top 75%' },
+  });
+
+  gsap.from(section.querySelectorAll('.timeline-node'), {
+    y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out',
+    scrollTrigger: { trigger: section, start: 'top 65%' },
+  });
+
+  const rail = section.querySelector('.timeline-rail');
+  if (rail) {
+    gsap.from(rail, {
+      scaleX: 0, transformOrigin: 'left', duration: 1.2, ease: 'power2.out',
+      scrollTrigger: { trigger: section, start: 'top 70%' },
+    });
+  }
 }
