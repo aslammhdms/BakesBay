@@ -110,6 +110,10 @@ const waUrl = 'https://wa.me/918438499833?text=Hi%20Bakes%20Bay%2C%20I%27d%20lik
                             <span class="text-cocoa/30 mx-1">·</span>
                             <span class="text-cocoa/50 text-xs mr-1">12"</span>{item.price}
                           </>
+                        ) : theme.slug === 'pizza' ? (
+                          <>
+                            <span class="text-cocoa/50 text-xs mr-1">12"</span>{item.price}
+                          </>
                         ) : (
                           <>₹{item.price}</>
                         )}

@@ -102,11 +102,6 @@ cloudflared tunnel --url http://localhost:4321   # public sharing via trycloudfl
 
 ## Known open items
 
-**Consistency / drift**
-- **Pizza size inconsistency** — some items show `9" N · 12" M`, others just `₹X` with no size tag. Pick one approach across all pizzas.
-- **Gallery heading orphaned** — `Gallery.astro` still has `<h2>The Craft</h2>`; the Craft section was renamed to "Four Corners", so "The Craft" now reads as meaningless here.
-- **`MenuPanel.astro` is dead code** — unused after the Menu.astro rewrite; safe to delete.
-
 **Broken / missing**
 - **`public/og-image.jpg` doesn't exist** but is referenced in `Layout.astro` → social previews are blank.
 - **Hero has three `<h1>` tags** ("Bake", "Your", "Day") — bad for SEO; should be one semantic H1 with visual line breaks.
