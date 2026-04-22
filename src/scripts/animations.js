@@ -107,23 +107,12 @@ function animateHero() {
   }
 
   const headlines = document.querySelectorAll('.hero-headline h1');
-  headlines.forEach((h, i) => {
+  headlines.forEach((h, lineIdx) => {
     splitHeadline(h);
     const chars = h.querySelectorAll('.char');
-    if (!chars.length) return;
-    gsap.fromTo(
-      chars,
-      { yPercent: 110, opacity: 0, rotate: 6 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        rotate: 0,
-        duration: 0.8,
-        stagger: 0.04,
-        ease: 'power3.out',
-        delay: 0.3 + i * 0.2,
-      }
-    );
+    chars.forEach((c, i) => {
+      setTimeout(() => c.classList.add('is-revealed'), 300 + lineIdx * 180 + i * 45);
+    });
   });
 
   // Draw the "Day" underline after the last headline lands

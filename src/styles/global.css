@@ -165,19 +165,19 @@
 /* ─── Split-text char reveal ─── */
 .char {
   display: inline-block;
-  transform: translateY(110%);
   opacity: 0;
+  transform: translateY(110%) rotate(6deg);
   will-change: transform, opacity;
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .char.is-revealed {
-  transform: translateY(0);
   opacity: 1;
-  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
+  transform: translateY(0) rotate(0deg);
 }
 @media (prefers-reduced-motion: reduce) {
   .char {
-    transform: translateY(0);
     opacity: 1;
+    transform: none;
     transition: none;
   }
 }
