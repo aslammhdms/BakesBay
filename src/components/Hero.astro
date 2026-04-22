@@ -89,31 +89,11 @@ const slides = [
     </div>
   </div>
 
-  <!-- Caramel Ticker -->
-  <div class="absolute bottom-0 left-0 w-full bg-caramel/15 py-3 overflow-hidden border-t border-caramel/20">
-    <div class="marquee-hero flex whitespace-nowrap">
-      {[0, 1, 2].map(() => (
-        <span class="font-display text-lg md:text-xl italic font-semibold text-caramel/60 shrink-0 pr-8">
-          FRESHLY BAKED · HANDCRAFTED · FALOODA · LASSI · MADE DAILY IN COIMBATORE ·&nbsp;
-        </span>
-      ))}
-    </div>
-  </div>
-
   <!-- Slide captions data for animations -->
   <script type="application/json" id="hero-captions" is:inline set:html={JSON.stringify(slides.map(s => s.caption))} />
 </section>
 
 <style>
-  .marquee-hero {
-    animation: marquee-hero 30s linear infinite;
-    width: max-content;
-  }
-  @keyframes marquee-hero {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
-  }
-
   .hero-slide {
     opacity: 0;
     transition: opacity 1s ease;
@@ -130,7 +110,6 @@ const slides = [
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .marquee-hero { animation: none; }
     .hero-slide-img { transition: none; transform: scale(1); }
   }
 </style>

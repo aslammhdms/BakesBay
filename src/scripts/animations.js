@@ -55,7 +55,8 @@ function animatePreloader(onComplete) {
   });
 
   tl.to('#preloader-logo', { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' });
-  tl.to('#preloader-tagline', { opacity: 1, duration: 0.6, ease: 'power1.in' }, '-=0.3');
+  tl.to('#preloader-wordmark', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.2');
+  tl.to('#preloader-tagline', { opacity: 1, duration: 0.5, ease: 'power1.in' }, '-=0.3');
 
   const counter = { val: 0 };
   const counterEl = document.getElementById('preloader-counter');
