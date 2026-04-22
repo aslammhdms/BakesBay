@@ -1,6 +1,7 @@
 ---
 import Wheat from './illustrations/Wheat.astro';
 import Steam from './illustrations/Steam.astro';
+import UnderlineHand from './UnderlineHand.astro';
 
 const slides = [
   {
@@ -37,7 +38,12 @@ const slides = [
             <h1 class="text-display-xl text-sage">Your</h1>
           </div>
           <div class="overflow-hidden">
-            <h1 class="text-display-xl text-cocoa underline-hand inline-block">Day</h1>
+            <h1 class="text-display-xl text-cocoa inline-block relative">
+              Day
+              <span class="block absolute left-0 -bottom-1 w-full pointer-events-none">
+                <UnderlineHand class="hero-underline" />
+              </span>
+            </h1>
           </div>
         </div>
         <div class="flex items-center gap-3 mt-6">

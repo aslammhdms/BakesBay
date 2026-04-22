@@ -147,6 +147,41 @@
   .tilt-slight { transform: rotate(1deg); }
 }
 
+/* ─── Scroll progress indicator ─── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-caramel);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 60;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ─── Split-text char reveal ─── */
+.char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.char.is-revealed {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+  }
+}
+
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
