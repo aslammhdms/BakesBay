@@ -3,6 +3,7 @@ import Oven from './illustrations/Oven.astro';
 import Wheat from './illustrations/Wheat.astro';
 import Whisk from './illustrations/Whisk.astro';
 import Steam from './illustrations/Steam.astro';
+import LiveBadge from './LiveBadge.astro';
 
 const pillars = [
   {
@@ -12,6 +13,7 @@ const pillars = [
     body: 'Our bread is mixed by hand the night before and stretched into shape at first light. Laminated pastries get 27 folds and a block of cultured butter. Everything comes out of the oven before most of the city is awake.',
     icon: 'wheat',
     tilt: 'tilt-left',
+    live: true,
   },
   {
     roman: 'II',
@@ -64,9 +66,12 @@ const pillars = [
           </div>
         </div>
 
-        <h3 class="font-display text-3xl md:text-4xl italic font-semibold text-cocoa mb-3">
-          {p.title}
-        </h3>
+        <div class="flex items-center gap-3 mb-3 flex-wrap">
+          <h3 class="font-display text-3xl md:text-4xl italic font-semibold text-cocoa">
+            {p.title}
+          </h3>
+          {p.live && <LiveBadge label="LIVE" size="sm" />}
+        </div>
         <p class="text-script text-lg text-caramel mb-6">{p.detail}</p>
         <p class="text-espresso/70 leading-relaxed">{p.body}</p>
       </article>

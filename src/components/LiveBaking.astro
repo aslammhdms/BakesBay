@@ -1,0 +1,86 @@
+---
+import LiveBadge from './LiveBadge.astro';
+import Oven from './illustrations/Oven.astro';
+import Wheat from './illustrations/Wheat.astro';
+import Steam from './illustrations/Steam.astro';
+
+const beats = [
+  {
+    icon: 'oven',
+    title: 'Ovens in full view',
+    body: 'Watch your bread come out of the oven while you sip your coffee. Our kitchens are open, not tucked behind a wall.',
+  },
+  {
+    icon: 'wheat',
+    title: 'Baked through the day',
+    body: 'Nothing sits from yesterday. Morning sourdough, midday focaccia, evening cookies — each wave fresh from the oven.',
+  },
+  {
+    icon: 'steam',
+    title: 'No mixes, no shortcuts',
+    body: 'Every dough is mixed, folded, and shaped by hand the night before or the hour before. No premixes, no frozen ingredients.',
+  },
+];
+---
+
+<section id="live-baking" class="relative py-20 md:py-28 px-6 md:px-12 bg-ivory texture-paper overflow-hidden" data-section="live-baking">
+  <!-- Corner badge -->
+  <div class="absolute top-6 right-6 md:top-10 md:right-12 z-10">
+    <LiveBadge label="LIVE NOW" size="md" />
+  </div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+      <!-- Left: Copy -->
+      <div class="w-full lg:w-[55%]">
+        <span class="text-label text-sage mb-5 block">The Kitchen</span>
+        <h2 class="live-baking-headline text-display-lg text-cocoa mb-6 leading-[0.95]">
+          Everything you eat, <em class="text-caramel">baked live.</em>
+        </h2>
+        <p class="text-script text-xl md:text-2xl text-caramel mb-10">
+          fresh since sunrise, in full view
+        </p>
+
+        <div class="space-y-6 md:space-y-8">
+          {beats.map((beat) => (
+            <div class="live-baking-beat flex items-start gap-5 md:gap-6">
+              <div class="shrink-0 opacity-70 mt-1">
+                {beat.icon === 'oven' && <Oven size="w-9 h-9" />}
+                {beat.icon === 'wheat' && <Wheat size="w-6 h-10" />}
+                {beat.icon === 'steam' && <Steam size="w-8 h-12" />}
+              </div>
+              <div>
+                <h3 class="font-display text-xl md:text-2xl italic font-semibold text-cocoa mb-1.5">
+                  {beat.title}
+                </h3>
+                <p class="text-espresso/70 text-base leading-relaxed">
+                  {beat.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Photo -->
+      <div class="w-full lg:w-[45%]">
+        <div class="live-baking-photo relative tilt-right shadow-2xl rounded-sm overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=1000&auto=format&fit=crop&q=85"
+            alt="Baker shaping dough in the open kitchen"
+            class="w-full aspect-[4/5] object-cover"
+            loading="lazy"
+          />
+          <!-- Gradient + caption -->
+          <div class="absolute inset-0 bg-gradient-to-t from-cocoa/70 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
+            <p class="text-script text-lg text-cream">
+              flour to oven, every day
+            </p>
+            <LiveBadge label="LIVE" size="sm" theme="light" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

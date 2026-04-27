@@ -9,31 +9,31 @@
         {
           "name": "Hot Coffee",
           "items": [
-            { "name": "Espresso", "price": 50 },
-            { "name": "Americano", "price": 60 },
-            { "name": "Cappuccino", "price": 100 },
-            { "name": "Cafe Latte", "price": 110 },
-            { "name": "Cafe Mocha", "price": 120 },
-            { "name": "Caramel Hot Chocolate", "price": 130 },
-            { "name": "Cafe Macchiato", "price": 140 }
+            { "name": "Espresso" },
+            { "name": "Americano" },
+            { "name": "Cappuccino" },
+            { "name": "Cafe Latte" },
+            { "name": "Cafe Mocha" },
+            { "name": "Caramel Hot Chocolate" },
+            { "name": "Cafe Macchiato" }
           ]
         },
         {
           "name": "Cold Coffee",
           "items": [
-            { "name": "Classic Iced Latte", "price": 120 },
-            { "name": "Iced Americano", "price": 120 },
-            { "name": "Caramel Iced Latte", "price": 130 },
-            { "name": "Cold Brew", "price": 130 }
+            { "name": "Classic Iced Latte" },
+            { "name": "Iced Americano" },
+            { "name": "Caramel Iced Latte" },
+            { "name": "Cold Brew" }
           ]
         },
         {
           "name": "Ice-Cream Blended Frappés",
           "items": [
-            { "name": "Cafe Frappé", "price": 150 },
-            { "name": "Crunchy Caramello", "price": 160 },
-            { "name": "Choco Frappé", "price": 160 },
-            { "name": "Caramel Frappé", "price": 160 }
+            { "name": "Cafe Frappé" },
+            { "name": "Crunchy Caramello" },
+            { "name": "Choco Frappé" },
+            { "name": "Caramel Frappé" }
           ]
         }
       ]
@@ -47,63 +47,63 @@
         {
           "name": "Starters",
           "items": [
-            { "name": "Garlic Bread", "price": 110 },
-            { "name": "Cheese Garlic Bread", "price": 140 },
-            { "name": "Crispy Chicken Finger", "price": 190 },
-            { "name": "Crispy Paneer Finger", "price": 180 },
-            { "name": "Potato Wedges", "price": 120 },
-            { "name": "Classic Salted Fries", "price": 120 },
-            { "name": "Peri Peri Fries", "price": 130 },
-            { "name": "Chicken Pop Corn", "price": 190 },
-            { "name": "Chicken Loaded Fries", "price": 230 },
-            { "name": "Gobi Manchurian Dry", "price": 180 },
-            { "name": "Gobi Chilli", "price": 150 },
-            { "name": "Paneer Chilli", "price": 170 },
-            { "name": "Egg Manchurian", "price": 170 }
+            { "name": "Garlic Bread" },
+            { "name": "Cheese Garlic Bread" },
+            { "name": "Crispy Chicken Finger" },
+            { "name": "Crispy Paneer Finger" },
+            { "name": "Potato Wedges" },
+            { "name": "Classic Salted Fries" },
+            { "name": "Peri Peri Fries" },
+            { "name": "Chicken Pop Corn" },
+            { "name": "Chicken Loaded Fries" },
+            { "name": "Gobi Manchurian Dry" },
+            { "name": "Gobi Chilli" },
+            { "name": "Paneer Chilli" },
+            { "name": "Egg Manchurian" }
           ]
         },
         {
           "name": "Soups",
           "items": [
-            { "name": "Tomato Basil Soup", "price": 120 },
-            { "name": "Mushroom & Parmesan Soup", "price": 180 },
-            { "name": "Broccoli Creamy Soup", "price": 160 },
-            { "name": "Leek Chicken Soup", "price": 180 },
-            { "name": "Spinach Mushroom Soup", "price": 160 },
-            { "name": "Chicken Manchow Soup", "price": 200 },
-            { "name": "Veg Manchow Soup", "price": 170 },
-            { "name": "Chicken Hot & Sour Soup", "price": 200 },
-            { "name": "Veg Hot & Sour Soup", "price": 170 }
+            { "name": "Tomato Basil Soup" },
+            { "name": "Mushroom & Parmesan Soup" },
+            { "name": "Broccoli Creamy Soup" },
+            { "name": "Leek Chicken Soup" },
+            { "name": "Spinach Mushroom Soup" },
+            { "name": "Chicken Manchow Soup" },
+            { "name": "Veg Manchow Soup" },
+            { "name": "Chicken Hot & Sour Soup" },
+            { "name": "Veg Hot & Sour Soup" }
           ]
         },
         {
           "name": "Salads",
           "items": [
-            { "name": "Caesar Salad", "price": 150 },
-            { "name": "Greek Salad", "price": 160 },
-            { "name": "Potato Mustard Salad", "price": 150 },
-            { "name": "Caesar Salad Non-Veg", "price": 190 },
-            { "name": "BBQ Chicken Salad", "price": 180 },
-            { "name": "Chicken Salami Salad", "price": 190 },
-            { "name": "Roasted Chicken Corn Salad", "price": 200 }
+            { "name": "Caesar Salad" },
+            { "name": "Greek Salad" },
+            { "name": "Potato Mustard Salad" },
+            { "name": "Caesar Salad Non-Veg" },
+            { "name": "BBQ Chicken Salad" },
+            { "name": "Chicken Salami Salad" },
+            { "name": "Roasted Chicken Corn Salad" }
           ]
         },
         {
           "name": "Wings & Momos",
           "items": [
-            { "name": "Veg Momos", "price": 130 },
-            { "name": "Peri Peri Chicken Momos", "price": 160 },
-            { "name": "Schezwan Chicken Momos", "price": 170 },
-            { "name": "BBQ Wings", "price": 200 },
-            { "name": "Peri Peri Wings", "price": 200 }
+            { "name": "Veg Momos" },
+            { "name": "Peri Peri Chicken Momos" },
+            { "name": "Schezwan Chicken Momos" },
+            { "name": "BBQ Wings" },
+            { "name": "Peri Peri Wings" }
           ]
         },
         {
           "name": "Bakes Bay Special",
           "items": [
-            { "name": "Dragon Chicken", "price": 300 },
-            { "name": "Spaghetti Aglio Olio", "price": 300 },
-            { "name": "Spaghetti Bolognese Pasta", "price": 300 }
+            { "name": "Dragon Chicken" },
+            { "name": "Spaghetti Aglio Olio" },
+            { "name": "Spaghetti Bolognese Pasta" }
           ]
         }
       ]
@@ -117,55 +117,55 @@
         {
           "name": "Sandwiches",
           "items": [
-            { "name": "Classic Veg", "price": 120 },
-            { "name": "Egg Sandwich", "price": 130 },
-            { "name": "Cheesy Mushroom", "price": 140 },
-            { "name": "Traditional Pesto Veg", "price": 150 },
-            { "name": "Veg Club", "price": 160 },
-            { "name": "Spinach & Corn", "price": 160 },
-            { "name": "Paneer Tikka Sandwich", "price": 170 },
-            { "name": "Peri Peri Paneer Sandwich", "price": 180 },
-            { "name": "Peri Peri Chicken", "price": 190 },
-            { "name": "Chicken Tikka Sandwich", "price": 200 },
-            { "name": "Roasted Chicken", "price": 200 },
-            { "name": "Chicken Club", "price": 220 },
-            { "name": "Smoke Chicken Sandwich", "price": 220 }
+            { "name": "Classic Veg" },
+            { "name": "Egg Sandwich" },
+            { "name": "Cheesy Mushroom" },
+            { "name": "Traditional Pesto Veg" },
+            { "name": "Veg Club" },
+            { "name": "Spinach & Corn" },
+            { "name": "Paneer Tikka Sandwich" },
+            { "name": "Peri Peri Paneer Sandwich" },
+            { "name": "Peri Peri Chicken" },
+            { "name": "Chicken Tikka Sandwich" },
+            { "name": "Roasted Chicken" },
+            { "name": "Chicken Club" },
+            { "name": "Smoke Chicken Sandwich" }
           ]
         },
         {
           "name": "Burgers",
           "items": [
-            { "name": "Classic Veg Burger", "price": 140 },
-            { "name": "BBQ Veg Burger", "price": 160 },
-            { "name": "Classic Chicken Burger", "price": 180 },
-            { "name": "BBQ Paneer Burger", "price": 200 },
-            { "name": "Chicken Zinger Burger", "price": 220 },
-            { "name": "BBQ Chicken Burger", "price": 240 },
-            { "name": "Chicken Cheese Omelet Burger", "price": 250 }
+            { "name": "Classic Veg Burger" },
+            { "name": "BBQ Veg Burger" },
+            { "name": "Classic Chicken Burger" },
+            { "name": "BBQ Paneer Burger" },
+            { "name": "Chicken Zinger Burger" },
+            { "name": "BBQ Chicken Burger" },
+            { "name": "Chicken Cheese Omelet Burger" }
           ]
         },
         {
           "name": "Spaghetti",
           "items": [
-            { "name": "Alfredo Spaghetti Veg", "price": 230 },
-            { "name": "Arrabbiata Spaghetti Veg", "price": 230 },
-            { "name": "Red Pesto Spaghetti Veg", "price": 230 },
-            { "name": "Alfredo Spaghetti Non-Veg", "price": 280 },
-            { "name": "Arrabbiata Spaghetti Non-Veg", "price": 280 },
-            { "name": "Red Pesto Spaghetti Non-Veg", "price": 280 }
+            { "name": "Alfredo Spaghetti Veg" },
+            { "name": "Arrabbiata Spaghetti Veg" },
+            { "name": "Red Pesto Spaghetti Veg" },
+            { "name": "Alfredo Spaghetti Non-Veg" },
+            { "name": "Arrabbiata Spaghetti Non-Veg" },
+            { "name": "Red Pesto Spaghetti Non-Veg" }
           ]
         },
         {
           "name": "Pasta",
           "items": [
-            { "name": "Penne Alfredo Veg", "price": 260 },
-            { "name": "Red Pesto Penne Veg", "price": 260 },
-            { "name": "Traditional Pesto Pasta Veg", "price": 260 },
-            { "name": "Penne Arrabiata Veg", "price": 260 },
-            { "name": "Penne Alfredo Non-Veg", "price": 300 },
-            { "name": "Red Pesto Penne Non-Veg", "price": 300 },
-            { "name": "Traditional Pesto Pasta Non-Veg", "price": 300 },
-            { "name": "Penne Arrabiata Non-Veg", "price": 300 }
+            { "name": "Penne Alfredo Veg" },
+            { "name": "Red Pesto Penne Veg" },
+            { "name": "Traditional Pesto Pasta Veg" },
+            { "name": "Penne Arrabiata Veg" },
+            { "name": "Penne Alfredo Non-Veg" },
+            { "name": "Red Pesto Penne Non-Veg" },
+            { "name": "Traditional Pesto Pasta Non-Veg" },
+            { "name": "Penne Arrabiata Non-Veg" }
           ]
         }
       ]
@@ -179,25 +179,25 @@
         {
           "name": "Veg",
           "items": [
-            { "name": "Margheritta", "priceSmall": 250, "price": 280 },
-            { "name": "Paneer Tikka", "priceSmall": 270, "price": 300 },
-            { "name": "Hawaiian", "priceSmall": 270, "price": 300 },
-            { "name": "Farm House", "priceSmall": 270, "price": 300 },
-            { "name": "Primavera", "price": 290 },
-            { "name": "Mushroom with Dry Tomato", "price": 290 },
-            { "name": "Four Cheese Pizza", "price": 280 }
+            { "name": "Margheritta" },
+            { "name": "Paneer Tikka" },
+            { "name": "Hawaiian" },
+            { "name": "Farm House" },
+            { "name": "Primavera" },
+            { "name": "Mushroom with Dry Tomato" },
+            { "name": "Four Cheese Pizza" }
           ]
         },
         {
           "name": "Non-Veg",
           "items": [
-            { "name": "Salami Chicken", "priceSmall": 300, "price": 350 },
-            { "name": "Chicken Tikka", "priceSmall": 300, "price": 350 },
-            { "name": "BBQ Chicken", "price": 350 },
-            { "name": "Peri Peri Chicken", "price": 350 },
-            { "name": "Mexican Chicken", "price": 360 },
-            { "name": "Smoke Chicken Pizza", "price": 390 },
-            { "name": "Pesto Chicken Pizza", "price": 390 }
+            { "name": "Salami Chicken" },
+            { "name": "Chicken Tikka" },
+            { "name": "BBQ Chicken" },
+            { "name": "Peri Peri Chicken" },
+            { "name": "Mexican Chicken" },
+            { "name": "Smoke Chicken Pizza" },
+            { "name": "Pesto Chicken Pizza" }
           ]
         }
       ]
@@ -211,18 +211,18 @@
         {
           "name": "Rice & Noodles",
           "items": [
-            { "name": "Veg Fried Rice", "price": 160 },
-            { "name": "Egg Fried Rice", "price": 180 },
-            { "name": "Egg Schezwan Fried Rice", "price": 200 },
-            { "name": "Veg Schezwan Fried Rice", "price": 200 },
-            { "name": "Chicken Fried Rice", "price": 230 },
-            { "name": "Chicken Schezwan Fried Rice", "price": 250 },
-            { "name": "Egg Noodles", "price": 180 },
-            { "name": "Veg Schezwan Noodles", "price": 180 },
-            { "name": "Veg Hakka Noodles", "price": 190 },
-            { "name": "Egg Schezwan Noodles", "price": 200 },
-            { "name": "Chicken Hakka Noodles", "price": 230 },
-            { "name": "Chicken Schezwan Noodles", "price": 250 }
+            { "name": "Veg Fried Rice" },
+            { "name": "Egg Fried Rice" },
+            { "name": "Egg Schezwan Fried Rice" },
+            { "name": "Veg Schezwan Fried Rice" },
+            { "name": "Chicken Fried Rice" },
+            { "name": "Chicken Schezwan Fried Rice" },
+            { "name": "Egg Noodles" },
+            { "name": "Veg Schezwan Noodles" },
+            { "name": "Veg Hakka Noodles" },
+            { "name": "Egg Schezwan Noodles" },
+            { "name": "Chicken Hakka Noodles" },
+            { "name": "Chicken Schezwan Noodles" }
           ]
         }
       ]
@@ -249,7 +249,8 @@
       "tagline": "for every celebration worth baking",
       "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=85",
       "descriptive": true,
-      "description": "Every cake at Bakes Bay is baked to order. Classic sponges, fudge-layered chocolates, tiered celebration cakes, custom designs for birthdays, anniversaries, and every quiet occasion worth marking. Share your idea — theme, flavour, dedication — and we'll bake the rest. WhatsApp us to place your order."
+      "link": "/cakes",
+      "description": "Every cake at Bakes Bay is baked to order — classic sponges, fudge-layered chocolates, tiered celebration cakes, and custom designs for birthdays, anniversaries, and every quiet occasion worth marking. Browse the full catalog, or share your idea on WhatsApp and we'll bake the rest."
     },
     {
       "slug": "desserts",
@@ -260,24 +261,24 @@
         {
           "name": "Falooda",
           "items": [
-            { "name": "Mini Falooda", "price": 150 },
-            { "name": "Butterscotch Falooda", "price": 160 },
-            { "name": "Strawberry Falooda", "price": 160 },
-            { "name": "Royal Falooda", "price": 180 },
-            { "name": "Dry Fruit Mixed Falooda", "price": 190 }
+            { "name": "Mini Falooda" },
+            { "name": "Butterscotch Falooda" },
+            { "name": "Strawberry Falooda" },
+            { "name": "Royal Falooda" },
+            { "name": "Dry Fruit Mixed Falooda" }
           ]
         },
         {
           "name": "Thick Shakes",
           "items": [
-            { "name": "Apple Thick Shake", "price": 130 },
-            { "name": "Mango Thick Shake", "price": 130 },
-            { "name": "Chocolate Thick Shake", "price": 140 },
-            { "name": "Strawberry Thick Shake", "price": 140 },
-            { "name": "Avocado Thick Shake", "price": 140 },
-            { "name": "Kit Kat Thick Shake", "price": 150 },
-            { "name": "Oreo Thick Shake", "price": 150 },
-            { "name": "Brownie Thick Shake", "price": 180 }
+            { "name": "Apple Thick Shake" },
+            { "name": "Mango Thick Shake" },
+            { "name": "Chocolate Thick Shake" },
+            { "name": "Strawberry Thick Shake" },
+            { "name": "Avocado Thick Shake" },
+            { "name": "Kit Kat Thick Shake" },
+            { "name": "Oreo Thick Shake" },
+            { "name": "Brownie Thick Shake" }
           ]
         }
       ]
@@ -291,33 +292,33 @@
         {
           "name": "Fresh Juice",
           "items": [
-            { "name": "Water Melon", "price": 70 },
-            { "name": "Musk Melon", "price": 70 },
-            { "name": "Pineapple", "price": 70 },
-            { "name": "Orange", "price": 80 },
-            { "name": "Apple", "price": 80 },
-            { "name": "Grape", "price": 80 },
-            { "name": "Mango", "price": 80 },
-            { "name": "Anaar", "price": 90 },
-            { "name": "Avocado", "price": 90 }
+            { "name": "Water Melon" },
+            { "name": "Musk Melon" },
+            { "name": "Pineapple" },
+            { "name": "Orange" },
+            { "name": "Apple" },
+            { "name": "Grape" },
+            { "name": "Mango" },
+            { "name": "Anaar" },
+            { "name": "Avocado" }
           ]
         },
         {
           "name": "Mojitos",
           "items": [
-            { "name": "Virgin Mojito", "price": 100 },
-            { "name": "Green Apple Mojito", "price": 100 },
-            { "name": "Passion Fruit Mojito", "price": 100 },
-            { "name": "Blue Curacao Mojito", "price": 100 }
+            { "name": "Virgin Mojito" },
+            { "name": "Green Apple Mojito" },
+            { "name": "Passion Fruit Mojito" },
+            { "name": "Blue Curacao Mojito" }
           ]
         },
         {
           "name": "Smoothies",
           "items": [
-            { "name": "Blue Currant", "price": 140 },
-            { "name": "Black Currant", "price": 140 },
-            { "name": "Red Velvet", "price": 140 },
-            { "name": "Avocado", "price": 140 }
+            { "name": "Blue Currant" },
+            { "name": "Black Currant" },
+            { "name": "Red Velvet" },
+            { "name": "Avocado" }
           ]
         }
       ]

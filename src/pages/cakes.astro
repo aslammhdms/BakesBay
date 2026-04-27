@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import NavOverlay from '../components/NavOverlay.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFab from '../components/WhatsAppFab.astro';
+import UnderlineHand from '../components/UnderlineHand.astro';
+
+const categories = [
+  {
+    slug: 'classic',
+    label: 'Classic',
+    title: 'The Everyday Classics',
+    body: 'Sponges baked fresh every morning. Chocolate truffle, red velvet, black forest, pineapple, butterscotch, vanilla — the cakes we bake day-in, day-out. Walk into any branch and you\'ll find these on the counter.',
+    items: [
+      { name: 'Chocolate Truffle', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Red Velvet', image: 'https://images.unsplash.com/photo-1586788224331-947f68671cf1?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Black Forest', image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Vanilla Sponge', image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Butterscotch', image: 'https://images.unsplash.com/photo-1587248720327-8eb72564be1e?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Pineapple', image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=800&auto=format&fit=crop&q=85' },
+    ],
+  },
+  {
+    slug: 'celebration',
+    label: 'Celebration',
+    title: 'Birthdays, Anniversaries & Milestones',
+    body: 'Cakes that carry names, candles, and the weight of a good evening. Whatever the occasion — first birthday, silver anniversary, graduation, a promotion — we\'ll write the dedication, pick the colours, and match the frosting to the day.',
+    items: [
+      { name: 'Birthday Classic', image: 'https://images.unsplash.com/photo-1562440499-64c9a111f713?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Anniversary Tier', image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Floral Celebration', image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Cupcake Stack', image: 'https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop&q=85' },
+    ],
+  },
+  {
+    slug: 'custom',
+    label: 'Custom Design',
+    title: 'Your Idea, Our Oven',
+    body: 'Send us a reference photo, a theme, a character, a dedication — anything. We\'ll hand-sketch the design, match the palette, and bake it to your specs. Photo cakes, fondant characters, sculpted shapes, logo cakes for offices and launches.',
+    items: [
+      { name: 'Fondant Design', image: 'https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Photo Cake', image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Themed Design', image: 'https://images.unsplash.com/photo-1583527976767-69e6c2daa6e2?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Character Cake', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&auto=format&fit=crop&q=85' },
+    ],
+  },
+  {
+    slug: 'tiered',
+    label: 'Tiered & Grand',
+    title: 'Weddings, Engagements & the Big Days',
+    body: 'Multi-tier cakes for the occasions that ask for a little grandeur. Two tier, three tier, four tier — classic white, buttercream florals, gold leaf, drip finishes. Tasting consultations available for larger orders.',
+    items: [
+      { name: 'Two Tier Classic', image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Three Tier Wedding', image: 'https://images.unsplash.com/photo-1522184216316-3c25379f9760?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Floral Tier', image: 'https://images.unsplash.com/photo-1583527976767-69e6c2daa6e2?w=800&auto=format&fit=crop&q=85' },
+      { name: 'Gold Leaf Tier', image: 'https://images.unsplash.com/photo-1543352632-f2ff8eeb1d58?w=800&auto=format&fit=crop&q=85' },
+    ],
+  },
+];
+
+const waBase = 'https://wa.me/918438499833?text=';
+const waCustom = waBase + 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20order%20a%20custom%20cake.%0A%0AOccasion%3A%20%0ADate%20needed%3A%20%0AFlavour%20%2F%20design%3A%20%0ANo.%20of%20servings%3A%20%0A';
+---
+
+<Layout title="Cakes & Custom Cakes | Bakes Bay" description="Birthday cakes, anniversary cakes, tiered wedding cakes and fully custom designs — baked to order in Coimbatore. Order on WhatsApp.">
+  <Nav />
+  <NavOverlay />
+
+  <main id="main-content" class="bg-cream">
+    <!-- Hero -->
+    <section class="relative pt-36 md:pt-44 pb-16 md:pb-24 px-6 md:px-12 texture-paper">
+      <div class="max-w-5xl mx-auto text-center">
+        <span class="text-label text-sage mb-6 block">The Cakes Counter</span>
+        <h1 class="text-display-xl text-cocoa mb-4">
+          Cakes &amp; <em class="text-caramel">Custom Cakes</em>
+        </h1>
+        <div class="flex justify-center mb-8">
+          <div class="w-56">
+            <UnderlineHand />
+          </div>
+        </div>
+        <p class="text-script text-2xl md:text-3xl text-caramel mb-6">
+          baked to order, every single one
+        </p>
+        <p class="text-espresso/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          A classic sponge on the counter, a three-tier wedding cake for Saturday, a fondant dinosaur
+          for a five-year-old's birthday — we bake them all. No menu, no price lists, no forms.
+          WhatsApp us your idea and we'll quote you back within the hour.
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    {categories.map((cat, i) => (
+      <section id={`cat-${cat.slug}`} class={`px-6 md:px-12 py-16 md:py-24 ${i % 2 === 0 ? 'bg-ivory' : 'bg-cream'}`}>
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14 border-b border-caramel/20 pb-6">
+            <div>
+              <span class="text-label text-caramel/60 mb-2 block">{cat.label}</span>
+              <h2 class="font-display text-4xl md:text-5xl italic font-semibold text-cocoa leading-tight">
+                {cat.title}
+              </h2>
+            </div>
+            <a
+              href={waBase + 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20order%20a%20' + encodeURIComponent(cat.label.toLowerCase()) + '%20cake'}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-label text-sage hover:text-forest transition-colors duration-300 shrink-0"
+            >
+              Order on WhatsApp →
+            </a>
+          </div>
+
+          <p class="text-base md:text-lg leading-relaxed text-espresso/70 max-w-3xl mb-10 md:mb-14">
+            {cat.body}
+          </p>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {cat.items.map((item) => (
+              <div class="group relative overflow-hidden rounded-sm aspect-square shadow-md hover:shadow-xl transition-all duration-500">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-cocoa/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3">
+                  <p class="text-label text-cream leading-tight">
+                    {item.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- Custom intake block -->
+    <section class="px-6 md:px-12 py-24 md:py-32 bg-sage text-cream">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-label text-cream/60 mb-6 block">Custom Cakes</span>
+        <h2 class="text-display-lg text-cream mb-6">Tell us what you're celebrating.</h2>
+        <p class="text-cream/80 text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+          Send us the occasion, the date, the flavour, the design reference — or just a vague idea.
+          We'll reply with a quote, a sketch, and a baking timeline. Most custom orders need 48 hours'
+          notice; tiered cakes, a little more.
+        </p>
+        <a
+          href={waCustom}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-cream text-cocoa font-medium rounded-full hover:bg-butter transition-colors duration-300 shadow-lg"
+        >
+          Start a WhatsApp Order →
+        </a>
+        <p class="text-cream/50 text-sm mt-8">
+          Or call us on <a href="tel:+918438499833" class="text-cream hover:text-butter underline-offset-4 hover:underline">+91 8438 499 833</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Back home link -->
+    <section class="px-6 md:px-12 py-12 bg-cream border-t border-caramel/15 text-center">
+      <a href="/" class="text-label text-cocoa/60 hover:text-sage transition-colors duration-300">
+        ← Back to Bakes Bay
+      </a>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFab />
+</Layout>

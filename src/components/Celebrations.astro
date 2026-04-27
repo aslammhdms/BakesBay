@@ -1,38 +1,110 @@
 ---
+const cakes = [
+  {
+    label: 'Classic',
+    title: 'Everyday Cakes',
+    body: 'Sponges, chocolate truffle, red velvet, black forest — the classics we bake fresh every day.',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&auto=format&fit=crop&q=85',
+    waMsg: 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20order%20a%20classic%20cake',
+  },
+  {
+    label: 'Celebration',
+    title: 'Birthdays & Anniversaries',
+    body: 'Cakes for milestones — candles, names, the Tuesdays that deserve something special.',
+    image: 'https://images.unsplash.com/photo-1562440499-64c9a111f713?w=900&auto=format&fit=crop&q=85',
+    waMsg: 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20order%20a%20celebration%20cake',
+  },
+  {
+    label: 'Custom',
+    title: 'Custom Design',
+    body: 'Your idea, our oven. Themes, photos, fondant characters, handwritten dedications.',
+    image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=900&auto=format&fit=crop&q=85',
+    waMsg: 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20a%20custom%20cake%20design',
+  },
+  {
+    label: 'Tiered',
+    title: 'Tiered & Grand',
+    body: 'Multi-tier cakes for weddings, engagements, and the occasions that ask for a little grandeur.',
+    image: 'https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=900&auto=format&fit=crop&q=85',
+    waMsg: 'Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20order%20a%20tiered%20cake',
+  },
+];
 ---
 
-<section id="celebrations" class="relative py-24 md:py-40 px-6 md:px-12 bg-caramel/20 overflow-hidden" data-section="celebrations">
+<section id="celebrations" class="relative py-24 md:py-36 px-6 md:px-12 bg-caramel/10 overflow-hidden" data-section="celebrations">
   <!-- Subtle flourishes -->
   <div class="absolute top-10 left-16 w-6 h-1 bg-caramel/20 rounded-full rotate-45"></div>
   <div class="absolute top-24 right-24 w-4 h-1 bg-caramel/15 rounded-full -rotate-30"></div>
   <div class="absolute bottom-20 left-1/4 w-5 h-1 bg-caramel/15 rounded-full rotate-12"></div>
-  <div class="absolute bottom-32 right-16 w-3 h-1 bg-caramel/20 rounded-full -rotate-45"></div>
 
-  <div class="relative z-10 max-w-3xl mx-auto text-center">
-    <span class="text-label text-sage mb-8 block">06 — Celebrations</span>
-
-    <h2 class="text-display-md text-cocoa mb-8">
-      For the Occasions That Matter
-    </h2>
-
-    <blockquote class="mb-12">
-      <p class="font-display text-2xl md:text-4xl italic font-semibold text-cocoa/80 leading-snug">
-        "We bake for your birthdays, anniversaries, and every quiet victory in between."
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <!-- Heading -->
+    <div class="text-center mb-14 md:mb-20">
+      <span class="text-label text-sage mb-6 block">06 — Cakes & Custom Cakes</span>
+      <h2 class="text-display-lg text-cocoa mb-6">Every Cake, Baked to Order</h2>
+      <p class="text-script text-xl md:text-2xl text-caramel mb-8">
+        Classic, celebration, custom — your idea in our oven
       </p>
-    </blockquote>
+      <p class="text-espresso/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        From a single-layer chocolate for a quiet Tuesday to a three-tier wedding cake — every Bakes Bay
+        cake is baked to order in our own kitchens. Share your idea on WhatsApp and we'll take it from
+        flour to frosting.
+      </p>
+    </div>
 
-    <p class="text-espresso/60 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto">
-      Whether it's a milestone birthday or a Tuesday that deserves celebrating, we craft bespoke dessert
-      spreads that turn your gathering into something unforgettable.
-    </p>
+    <!-- 4-tile grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-20">
+      {cakes.map((cake, i) => (
+        <a
+          href={`https://wa.me/918438499833?text=${cake.waMsg}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`cake-tile group relative block overflow-hidden rounded-sm shadow-lg hover:shadow-2xl transition-all duration-500 aspect-[4/3] ${i % 2 === 0 ? 'tilt-slight' : ''}`}
+          data-cursor-hover
+        >
+          <img
+            src={cake.image}
+            alt={cake.title}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-cocoa/90 via-cocoa/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+            <span class="text-label text-butter mb-2 block">{cake.label}</span>
+            <h3 class="font-display text-2xl md:text-3xl italic font-semibold text-cream mb-2 leading-tight">
+              {cake.title}
+            </h3>
+            <p class="text-cream/80 text-sm md:text-base leading-relaxed">
+              {cake.body}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
 
-    <a
-      href="https://wa.me/918438499833?text=Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20enquire%20about%20celebrations"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-3 px-8 py-4 bg-sage text-white font-medium rounded-full hover:bg-forest transition-colors duration-300 shadow-md"
-    >
-      Enquire on WhatsApp →
-    </a>
+    <!-- Dual CTA -->
+    <div class="text-center">
+      <blockquote class="mb-10 max-w-2xl mx-auto">
+        <p class="font-display text-2xl md:text-3xl italic font-semibold text-cocoa/80 leading-snug">
+          "We bake for your birthdays, your anniversaries, and every quiet victory in between."
+        </p>
+      </blockquote>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/cakes"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-sage text-white font-medium rounded-full hover:bg-forest transition-colors duration-300 shadow-md"
+        >
+          Browse the Full Catalog →
+        </a>
+        <a
+          href="https://wa.me/918438499833?text=Hi%20Bakes%20Bay%2C%20I%27d%20like%20to%20enquire%20about%20a%20custom%20cake"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 border-2 border-cocoa/20 text-cocoa font-medium rounded-full hover:border-sage hover:text-sage transition-colors duration-300"
+        >
+          Request a Custom Cake
+        </a>
+      </div>
+    </div>
   </div>
 </section>

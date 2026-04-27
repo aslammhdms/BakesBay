@@ -2,6 +2,7 @@
 import Wheat from './illustrations/Wheat.astro';
 import Steam from './illustrations/Steam.astro';
 import UnderlineHand from './UnderlineHand.astro';
+import LiveBadge from './LiveBadge.astro';
 
 const slides = [
   {
@@ -27,9 +28,11 @@ const slides = [
     <div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
       <!-- Left: Headline (60%) -->
       <div class="w-full md:w-[60%] relative z-10">
-        <p class="hero-kicker text-label text-caramel/70 mb-5 md:mb-7">
-          Bakes Bay &mdash; Café &middot; Bakery &middot; Kitchen
-        </p>
+        <div class="hero-kicker flex items-center gap-3 mb-5 md:mb-7">
+          <span class="text-label text-caramel/80">Bakes Bay</span>
+          <span class="text-caramel/40 leading-none">—</span>
+          <LiveBadge label="LIVE BAKING" size="md" />
+        </div>
         <div class="hero-headline">
           <div class="overflow-hidden">
             <h1 class="text-display-xl text-cocoa">Bake</h1>
@@ -37,7 +40,7 @@ const slides = [
           <div class="overflow-hidden">
             <h1 class="text-display-xl text-sage">Your</h1>
           </div>
-          <div class="overflow-hidden">
+          <div class="pb-2 md:pb-4">
             <h1 class="text-display-xl text-cocoa inline-block relative">
               Day
               <span class="block absolute left-0 -bottom-1 w-full pointer-events-none">

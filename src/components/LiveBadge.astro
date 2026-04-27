@@ -1,0 +1,54 @@
+---
+interface Props {
+  label?: string;
+  size?: 'sm' | 'md' | 'lg';
+  theme?: 'light' | 'dark';
+  class?: string;
+}
+
+const { label = 'LIVE', size = 'md', theme = 'dark', class: className = '' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'text-[0.625rem] gap-1.5',
+  md: 'text-xs gap-2',
+  lg: 'text-sm gap-2.5',
+}[size];
+
+const dotSize = {
+  sm: 'w-1.5 h-1.5',
+  md: 'w-2 h-2',
+  lg: 'w-2.5 h-2.5',
+}[size];
+
+const textColor = theme === 'light' ? 'text-cream' : 'text-cocoa';
+---
+
+<span class={`live-badge inline-flex items-center ${sizeClasses} ${textColor} ${className}`}>
+  <span class={`live-badge-dot ${dotSize} rounded-full bg-red-500 shrink-0 relative`}>
+    <span class={`live-badge-pulse absolute inset-0 rounded-full bg-red-500`}></span>
+  </span>
+  <span class="font-mono tracking-[0.18em] font-medium">{label}</span>
+</span>
+
+<style>
+  .live-badge-pulse {
+    animation: live-pulse 1.8s ease-out infinite;
+  }
+
+  @keyframes live-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    80%, 100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .live-badge-pulse {
+      animation: none;
+    }
+  }
+</style>
