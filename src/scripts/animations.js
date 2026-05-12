@@ -106,7 +106,7 @@ function animateHero() {
     gsap.from(kicker, { opacity: 0, y: 10, duration: 0.7, ease: 'power2.out', delay: 0.1 });
   }
 
-  const headlines = document.querySelectorAll('.hero-headline h1');
+  const headlines = document.querySelectorAll('.hero-headline .hero-line');
   headlines.forEach((h, lineIdx) => {
     splitHeadline(h);
     const chars = h.querySelectorAll('.char');
